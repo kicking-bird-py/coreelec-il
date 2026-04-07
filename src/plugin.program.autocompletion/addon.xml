@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.program.autocompletion"
+       name="AutoCompletion [CoreELEC-IL Edition]" 
+       version="3.0.0"
+       provider-name="Philipp Temminghoff, sualfred, xulek, kicking-bird-py | CoreELEC-IL">
+    
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" version="2.25.1" />
+    </requires>
+
+    <extension point="xbmc.python.script" library="plugin.py">
+        <provides>executable</provides>
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Optimized Autocompletion Engine for POV [CoreELEC-IL]</summary>
+        <description lang="en_GB">High-performance version featuring Hebrew RTL fixes, smart caching, and exclusive POV search optimization. 
+                                Verified on Homatics Box R 4K Plus running CoreELEC NG.
+                                *** NOTE: This addon requires a supported skin. Examples: Arctic Fuse, Arctic Horizon 2 (AH2), Titan BINGE, FENtastic, Nimbus, and Embuary. ***</description>
+
+        <summary lang="he_IL">מנוע השלמה אוטומטית משופר ל-POV [CoreELEC-IL]</summary>
+        <description lang="he_IL">גרסה מיועלת ומהירה הכוללת תיקוני עברית (RTL), מערכת Caching חכמה ואופטימיזציית POV. 
+                                    נבדק ואומת על Homatics Box R 4K Plus תחת CoreELEC גרסת NG.
+                                *** שים לב: תוסף זה מחייב סקין תומך המטמיע את המנגנון במקלדת. סקינים תומכים לדוגמה: Arctic Fuse, Arctic Horizon 2 (AH2), Titan BINGE, FENtastic, Nimbus, ו-Embuary. ***</description>
+                                
+        <disclaimer lang="en_GB">This addon is provided AS-IS. Developed and verified for the CoreELEC-IL community on Homatics hardware running the NG version. Use on other systems at your own risk.</disclaimer>
+        <disclaimer lang="he_IL">התוסף מסופק כפי שהוא (AS-IS). פותח ואומת עבור קהילת CoreELEC-IL על גבי חומרת Homatics בגרסת NG. שימוש על מערכות אחרות הוא על אחריות המשתמש.</disclaimer>
+
+        <news lang="en_GB">
+                [v3.0.0] - CoreELEC-IL Major Update
+                - [Architecture] Integrated Package: Script and modules are built-in. No additional addons or dependencies will be installed.
+                - [UX] Ready-to-Use: No manual settings required. Search language and RTL are pre-configured for Hebrew.
+                - [Requirement] REQUIRES a supported skin: Arctic Fuse, AH2, Titan BINGE, FENtastic, Nimbus, Embuary, etc.
+                - [Hardware] Fully verified on Homatics Box R 4K Plus (CoreELEC NG version).
+                - [Development] Full Python 3 migration and code rewrite.
+                - [POV Optimization] Implemented 'clean_for_provider' logic to maximize search hits.
+                - [Performance] Added 7-day intelligent caching and 10s network timeout.
+        </news>
+
+        <news lang="he_IL">
+                [v3.0.0] - עדכון משמעותי CoreELEC-IL
+                - [ארכיטקטורה] חבילה אחודה: רכיבי הסקריפט והמודולים מוטמעים בפנים. ההתקנה אינה כוללת ואינה דורשת התקנת הרחבות נוספות.
+                - [חוויית משתמש] ללא צורך בהגדרות: התוסף מוגדר מראש לעבודה בעברית (שפת חיפוש ו-RTL) מיד עם ההתקנה.
+                - [דרישה] מחייב סקין תומך: Arctic Fuse, AH2, Titan BINGE, FENtastic, Nimbus, Embuary ועוד.
+                - [חומרה] נבדק ואומת באופן מלא על Homatics Box R 4K Plus (גרסת CoreELEC NG).
+                - [פיתוח] הסבה מלאה ל-Python 3 ושכתוב הקוד.
+                - [אופטימיזציית POV] ניקוי נתונים חכם לשיפור תוצאות חיפוש ב-Scrapers.
+                - [ביצועים] מערכת זיכרון מטמון ל-7 ימים ו-Timeout למניעת תקיעות.
+        </news>
+        <assets>
+        <icon>icon.png</icon>
+        </assets>
+        
+        <platform>all</platform>
+        <license>GPL-2.0-or-later</license>
+        <website>https://github.com/kicking-bird-py/open-source/plugin.program.autocompletion</website>
+        <source>https://github.com/kicking-bird-py/open-source/plugin.program.autocompletion</source>
+    </extension>
+</addon>

@@ -1,0 +1,84 @@
+### [v3.0.0] - גרסה משופרת ועצמאית (CoreELEC-IL)
+
+#### 1. ארכיטקטורה ועצמאות המערכת
+* **ביטול תלות במודולים חיצוניים:** המערכת שוכתבה כך שתפעל בצורה עצמאית לחלוטין, ללא צורך בהתקנת סקריפטים או מודולים חיצוניים (No Script Module Dependency), מה שמונע שגיאות התקנה ומבטיח תאימות מקסימלית.
+* **מעבר ל-Python 3:** הסבה מלאה ושכתוב הקוד לתמיכה בגרסאות Kodi 19, 20 ו-21 ומעלה.
+* **ניהול תהליכים מבוסס sys.argv:** שכלול העברת הפרמטרים וסיום התהליכים באמצעות sys.argv, מה שמאפשר עבודה חלקה ומדויקת מול מערכת ההפעלה.
+* **תיקון סוגי נתונים:** המרת ערכים למספרים שלמים (Integer) למניעת שגיאות קריסה בזמן ריצה בסביבת Python 3.
+
+#### 2. מהירות וביצועים (Under the Hood)
+* **מנגנון מטמון (Cache) פנימי:** הוספת מערכת זיכרון חכמה השומרת תוצאות חיפוש מקומית ל-7 ימים, מה שמבטל את זמני ההמתנה בחיפושים חוזרים.
+* **תשתית Requests משודרגת:** החלפת מנגנון שליפת הנתונים הישן במערכת מודרנית ומהירה משמעותית.
+* **מנגנון "אנטי-תקיעה":** הגדרת Timeout של 10 שניות לכל בקשת רשת כדי להבטיח שהממשק לעולם לא יקפא.
+
+#### 3. אופטימיזציה לחיפוש ו-POV
+* **ניקוי נתונים חכם ל-Scrapers:** הטמעת פונקציית clean_for_provider שמנקה מילים מיותרות (כמו "צפייה ישירה", "סרטים", "עונה") רק בעת בחירת התוצאה, כדי להבטיח מציאת מקורות מקסימלית ב-POV.
+* **זיהוי קלט חכם:** הפרדה לוגית בין טקסט שהוקלד ידנית לבין הצעות שנבחרו מהרשימה, כדי להחיל את הניקוי רק כשצריך.
+* **עברית כשפת אם:** שפת החיפוש הוגדרה כעברית מובנית בקוד (hl=he), ללא צורך בהגדרות משתמש נוספות.
+
+#### 4. חוויית משתמש וממשק (UI/UX)
+* **ממשק RTL מלא:** התאמה מושלמת לכתיבה מימין לשמאל, כולל לוגיקה להיפוך טקסט חכם במידת הצורך.
+* **ביטול חלונית ההמתנה (Busy Dialog):** אופטימיזציה לסגירה מיידית של חלונית ה-"טוען" ברגע שהמקלדת נפתחת או כשמתבצעת בחירה.
+* **תמיכה מלאה ב-Unicode:** שדרוג כלל המערכת ל-UTF-8 למניעת שגיאות בתווים מיוחדים ובעברית.
+
+#### 5. תאימות חומרה
+* **אימות חומרה:** המערכת נבדקה ואומתה כעובדת בצורה יציבה על סטרימר Homatics Box R 4K Plus תחת CoreELEC גרסת NG.
+
+---
+
+
+היסטוריית גרסאות מקוריות (מפתח מקורי - Philipp Temminghoff):
+
+1.1.2
+- העברת קבצים למקומות המתאימים להם בספריה.
+
+1.1.1
+- תיקון הפניה שגויה לסקריפט extendedinfo.
+
+1.1.0
+- אין תוצאות כאשר המקלדת עם קלט מוסתר פעילה.
+- עבודה מחדש על מבנה הקוד (Big code rework).
+- הוספת מנוע חיפוש Bing כספק תוצאות.
+- תיקון ספק התוצאות המקומי (localdict).
+
+
+### [v3.0.0] - New Improved & Independent Version (CoreELEC-IL)
+
+#### 1. Architecture & System Independence
+* **Zero Dependencies:** The system has been rewritten to operate entirely independently, removing the need for external script modules, ensuring a cleaner installation and maximum stability.
+* **Python 3 Migration:** Full code rewrite to support Kodi 19, 20, 21, and newer versions.
+* **sys.argv Process Management:** Refined parameter passing and process termination using sys.argv for precise OS interaction.
+* **Data Type Fixes:** Converted values to Integers to prevent runtime crashes in Python 3 environments.
+
+#### 2. Speed & Performance (Under the Hood)
+* **Internal Caching Mechanism:** Implemented a smart 7-day local cache for search results, eliminating wait times for repeat queries.
+* **Upgraded Requests Infrastructure:** Replaced the legacy data retrieval system with a modern, significantly faster framework.
+* **Anti-Freeze Logic:** Added a 10-second timeout for all network requests to guarantee a responsive user interface.
+
+#### 3. Search & POV Optimization
+* **Smart Scraper Cleaning:** Introduced the clean_for_provider function to remove redundant keywords (e.g., "Direct Watch," "Movies," "Season") upon selection, maximizing search accuracy in POV.
+* **Intelligent Input Detection:** Logically distinguishes between manual typing and list suggestions to apply data cleaning only when necessary.
+* **Native Hebrew Support:** Hardcoded Hebrew (hl=he) as the default language for Google API searches.
+
+#### 4. User Experience & Interface (UI/UX)
+* **Full RTL Support:** Perfect alignment for Right-to-Left languages, including smart text reversal logic for Hebrew characters.
+* **Busy Dialog Optimization:** Automatically closes the "Loading" dialog immediately when the keyboard opens or a result is selected.
+* **Unicode/UTF-8 Upgrade:** Full system upgrade to UTF-8 to prevent errors with special characters and Hebrew text.
+
+#### 5. Hardware Compatibility
+* **Verified Performance:** Thoroughly tested and verified for stable operation on the Homatics Box R 4K Plus running CoreELEC NG.
+
+---
+
+Previous Versions History: (Original Developer - Philipp Temminghoff):
+1.1.2
+move some stuff out of this lib (to the places they belong to)
+1.1.1
+fix wrong reference to extendedinfo script
+1.1.0
+No results when keyboard with hidden input is active
+big code rework
+added bing as provider
+fixed localdict provider
+1.0.0
+Initial release
