@@ -1,0 +1,142 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: service.safeboot.manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-27\n"
+"PO-Revision-Date: 2026-06-27\n"
+"Last-Translator: kicking-bird-py | CoreELEC-IL\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgctxt "#30001"
+msgid ""
+msgstr " Clearing temporary files..."
+
+msgctxt "#30002"
+msgid ""
+msgstr " Initializing system"
+
+msgctxt "#30003"
+msgid ""
+msgstr " Initializing services"
+
+msgctxt "#30004"
+msgid ""
+msgstr " Initializing IPTV interface"
+
+msgctxt "#30005"
+msgid ""
+msgstr " Loading IPTV channels"
+
+msgctxt "#30006"
+msgid ""
+msgstr " IPTV system ready"
+
+msgctxt "#30007"
+msgid ""
+msgstr " Scanning addons"
+
+msgctxt "#30008"
+msgid ""
+msgstr " IPTV system not active"
+
+msgctxt "#30009"
+msgid ""
+msgstr " Checking system stability"
+
+msgctxt "#30010"
+msgid ""
+msgstr " Checking Trakt connection..."
+
+msgctxt "#30011"
+msgid ""
+msgstr " Trakt service not connected"
+
+msgctxt "#30012"
+msgid ""
+msgstr " Checking TorBox connection..."
+
+msgctxt "#30013"
+msgid ""
+msgstr " TorBox not connected"
+
+msgctxt "#30014"
+msgid ""
+msgstr " Finishing scans"
+
+msgctxt "#30015"
+msgid ""
+msgstr " Finishing load"
+
+msgctxt "#30016"
+msgid ""
+msgstr "✔ Connected to Trakt"
+
+msgctxt "#30017"
+msgid ""
+msgstr "✔ Connected to TorBox"
+
+msgctxt "#30018"
+msgid ""
+msgstr "Kodi is ready ✔"
+
+msgctxt "#30019"
+msgid ""
+msgstr " System is processing, please wait"
+
+msgctxt "#30020"
+msgid ""
+msgstr " Closing player and stabilizing system..."
+
+msgctxt "#30021"
+msgid ""
+msgstr " Starting player, please wait..."
+
+msgctxt "#30022"
+msgid ""
+msgstr "Trakt is not connected. Open the login window?"
+
+msgctxt "#30023"
+msgid ""
+msgstr "TorBox is not connected. Open the login window?"
+
+# ── User Settings ──────────────────────────────
+
+msgctxt "#32000"
+msgid ""
+msgstr "Safe Boot Manager"
+
+msgctxt "#32001"
+msgid ""
+msgstr "Startup"
+
+msgctxt "#32005"
+msgid ""
+msgstr "Player"
+
+msgctxt "#32006"
+msgid ""
+msgstr "Show waiting screen in player"
+
+msgctxt "#32008"
+msgid ""
+msgstr "Enable Safe Boot Manager"
+
+msgctxt "#32011"
+msgid ""
+msgstr "Double back-key press to stop player"
+
+msgctxt "#32012"
+msgid ""
+msgstr "Press Back 3 times in a row"
+
+msgctxt "#32013"
+msgid ""
+msgstr "Exit player"
+
+msgctxt "#32014"
+msgid ""
+msgstr "Show waiting screen during system load"

@@ -1,0 +1,104 @@
+Addon:    Safe Boot Manager
+Author:   kicking-bird-py | CoreELEC-IL
+Source:   https://github.com/kicking-bird-py/coreelec-il
+License:  GPL-3.0-only
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+### [v1.0.0] - גרסה ראשונה ויציבה (CoreELEC-IL)
+
+#### 1. הגנה באתחול המערכת
+
+* **בועת הגנה בהדלקה:** חוסמת את השלט לכמה שניות בזמן שקודי עולה,
+  ומציגה סרגל התקדמות עם סטטוס בזמן אמת — כדי שלא תנחתו על מסך שלא נטען עדיין.
+
+* **ניקוי קבצים זמניים בהפעלה:** מנקה אוטומטית את תיקיית special://temp/
+  בכל הפעלה, תוך שמירה על קבצי לוג ונכסי ממשק קריטיים.
+
+* **המתנה לסיום חלון האתחול:** מזהה אוטומטית מתי קודי סיים לטעון
+  ומשחרר את ה-UI רק כשהמערכת יציבה.
+
+#### 2. הגנה בזמן ניגון
+
+* **שכבת הגנה בפתיחת נגן:** מציגה overlay עם progress בזמן טעינת המדיה,
+  ומונעת לחיצות מיותרות שעלולות לקרוס את הנגן.
+
+* **הגנה ביציאה מהנגן:** לאחר עצירת ניגון, מציגה overlay קצר
+  כדי לתת למערכת זמן לנקות זיכרון לפני שהמשתמש ממשיך.
+
+* **זיהוי סוג ניגון:** מזהה אוטומטית אם מדובר בסרט, טלוויזיה או רדיו (PVR)
+  ומתאים את ההתנהגות בהתאם.
+
+#### 3. עצירת נגן בלחיצה כפולה
+
+* **מנגנון Double Back:** לחיצה כפולה מהירה על כפתור החזור בזמן ניגון
+  עוצרת את הנגן מיידית — ללא צורך לחפש כפתור עצירה.
+
+* **Thread נפרד ויעיל:** הזיהוי רץ ב-background thread עצמאי (30ms polling)
+  ללא השפעה על ביצועי המערכת.
+
+* **Thread Safety מלא:** מנגנון בטוח להפעלה וכיבוי חוזר של ה-Watcher
+  ללא סיכון לקריסת RuntimeError.
+
+#### 4. Guardian — הגנה מתמשכת ברקע
+
+* **ניטור עומס מערכת:** מזהה busydialog, סריקת ספרייה וסריקת PVR
+  ומציג overlay אוטומטי בזמן עומס כבד.
+
+* **שמירת פוקוס:** בזמן ה-overlay, הפוקוס נשמר על כפתור חסימה
+  כדי לבלוע לחיצות שלט לא מכוונות.
+
+#### 5. עדכון הגדרות בזמן אמת
+
+* **ללא הפעלה מחדש:** כל שינוי בהגדרות מיושם מיידית
+  ללא צורך לאתחל את קודי או את התוסף.
+
+---
+
+### [v1.0.0] - First Stable Release (CoreELEC-IL)
+
+#### 1. Startup Protection
+
+* **Boot Overlay:** Blocks remote input for a few seconds while Kodi is loading,
+  displaying a real-time progress bar so users never land on an unready screen.
+
+* **Temp Cache Cleanup on Boot:** Automatically clears special://temp/ on every startup,
+  preserving log files and critical UI assets.
+
+* **Startup Window Detection:** Automatically detects when Kodi has finished loading
+  and releases the UI only when the system is stable.
+
+#### 2. Playback Protection
+
+* **Player Loading Overlay:** Displays a progress overlay while media is loading,
+  preventing accidental keypresses that could crash the player.
+
+* **Post-Playback Overlay:** After stopping playback, shows a brief overlay
+  to give the system time to free memory before the user continues.
+
+* **Playback Type Detection:** Automatically identifies whether the content is
+  a movie, TV show, or PVR radio/TV and adjusts behavior accordingly.
+
+#### 3. Double Back-Key Stop
+
+* **Double Back Mechanism:** Two quick Back-key presses during playback
+  instantly force-stops the player — no need to hunt for a stop button.
+
+* **Efficient Background Thread:** Detection runs in a dedicated background thread
+  (30ms polling) with no impact on system performance.
+
+* **Full Thread Safety:** Safe repeated enable/disable of the watcher thread
+  with no risk of RuntimeError crashes.
+
+#### 4. Guardian — Continuous Background Protection
+
+* **System Load Monitoring:** Detects busydialog, video library scans, and PVR scans,
+  automatically showing a blocking overlay during heavy system load.
+
+* **Focus Lock:** While the overlay is active, focus is locked on a blocker button
+  to swallow unintended remote keypresses.
+
+#### 5. Real-Time Settings Updates
+
+* **No Restart Required:** All setting changes take effect immediately
+  without needing to restart Kodi or the addon.

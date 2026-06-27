@@ -1,0 +1,144 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: service.safeboot.manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-27\n"
+"PO-Revision-Date: 2026-06-27\n"
+"Last-Translator: kicking-bird-py | CoreELEC-IL\n"
+"Language-Team: Hebrew\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgctxt "#30001"
+msgid ""
+msgstr " מנקה קבצים זמניים..."
+
+msgctxt "#30002"
+msgid ""
+msgstr " מאתחל מערכת"
+
+msgctxt "#30003"
+msgid ""
+msgstr " מאתחל שירותים"
+
+msgctxt "#30004"
+msgid ""
+msgstr " מאתחל ממשק IPTV"
+
+msgctxt "#30005"
+msgid ""
+msgstr " טוען ערוצי IPTV"
+
+msgctxt "#30006"
+msgid ""
+msgstr " מערכת IPTV מוכנה"
+
+msgctxt "#30007"
+msgid ""
+msgstr " סורק תוספים"
+
+msgctxt "#30008"
+msgid ""
+msgstr " מערכת IPTV לא פעילה"
+
+msgctxt "#30009"
+msgid ""
+msgstr " בודק יציבות מערכת"
+
+msgctxt "#30010"
+msgid ""
+msgstr " בודק חיבור ל-Trakt..."
+
+msgctxt "#30011"
+msgid ""
+msgstr " אין חיבור לשירות Trakt"
+
+msgctxt "#30012"
+msgid ""
+msgstr " בודק חיבור ל-TorBox..."
+
+msgctxt "#30013"
+msgid ""
+msgstr " אין חיבור ל-TorBox"
+
+msgctxt "#30014"
+msgid ""
+msgstr " מסיים סריקות"
+
+msgctxt "#30015"
+msgid ""
+msgstr " מסיים טעינה"
+
+msgctxt "#30016"
+msgid ""
+msgstr "✔ מחובר ל-Trakt"
+
+msgctxt "#30017"
+msgid ""
+msgstr "✔ מחובר ל-TorBox"
+
+msgctxt "#30018"
+msgid ""
+msgstr "קודי מוכן ✔"
+
+msgctxt "#30019"
+msgid ""
+msgstr " המערכת מעבדת נתונים, נא להמתין"
+
+msgctxt "#30020"
+msgid ""
+msgstr " סוגר נגן ומייצב מערכת..."
+
+msgctxt "#30021"
+msgid ""
+msgstr " מפעיל נגן, נא להמתין..."
+
+msgctxt "#30022"
+msgid ""
+msgstr "Trakt לא מחובר. האם לפתוח חלון התחברות?"
+
+msgctxt "#30023"
+msgid ""
+msgstr "TorBox לא מחובר. האם לפתוח חלון התחברות?"
+
+# ── הגדרות משתמש ──────────────────────────────
+
+msgctxt "#32000"
+msgid ""
+msgstr "Safe Boot Manager"
+
+msgctxt "#32001"
+msgid ""
+msgstr "אתחול"
+
+msgctxt "#32005"
+msgid ""
+msgstr "נגן"
+
+msgctxt "#32006"
+msgid ""
+msgstr "הצג מסך המתנה בנגן"
+
+msgctxt "#32008"
+msgid ""
+msgstr "הפעל את Safe Boot Manager"
+
+
+
+msgctxt "#32011"
+msgid ""
+msgstr "לחיצה כפולה על חזור לעצירת הנגן"
+
+msgctxt "#32012"
+msgid ""
+msgstr "לחץ 3 פעמים ברצף על מקש חזור"
+
+msgctxt "#32013"
+msgid ""
+msgstr "יציאה מנגן"
+
+msgctxt "#32014"
+msgid ""
+msgstr "הצג מסך המתנה בעומס מערכת"

@@ -1,0 +1,47 @@
+<addon id="service.safeboot.manager"
+       name="Safe Boot Manager"
+       version="1.0.0"
+       provider-name="kicking-bird-py | CoreELEC-IL">
+
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+
+    <extension point="xbmc.service" library="service.py" start="login"/>
+
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <license>GPL-3.0-only</license>
+        <source>https://github.com/kicking-bird-py/coreelec-il</source>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+
+        <summary lang="en_gb">Saving Kodi from crashing every time you click your remote like crazy.</summary>
+        <summary lang="he_il">התוסף שיציל את המערכת מקריסה בכל פעם שאתם לוחצים על השלט כמו משוגעים.</summary>
+
+        <description lang="en_gb">
+            We all know the drill: Kodi boots up, you rush to press the remote, and BAM – everything freezes and goes to sleep. Especially on (Kodi – CoreELEC) systems or those slow-morning streamers.
+            Instead of pulling the power plug, this add-on is here to save your sanity:
+            * Startup Guardian: Safely blocks your trigger-happy fingers for a few seconds during boot, while showing a nice status bar until it's safe to click.
+            * Exit &amp; Transition Protection: Cleans up memory behind the scenes so your streamer won't have a mini heart attack when you exit a movie too fast.
+            * The Panic Button: Video acting up? Don't hunt for the stop button. Just mash the Back key 3 times in a row, and it will force-close the player instantly.
+            Everything can be easily changed or turned off in the settings, so you can click in peace.
+        </description>
+
+        <description lang="he_il">
+            כולנו מכירים את זה: המכשיר נדלק, אתם ממהרים ללחוץ על השלט כדי לראות משהו, ובום – הכל קופא ונתקע. זה קורה המון במערכות (Kodi – CoreELEC), או בסטרימרים שמתעוררים לאט בבוקר.
+            במקום לנתק מהחשמל, התוסף הזה בא לעשות סדר בבלאגן:
+            * בועת הגנה בהדלקה: חוסמת לכם את האצבע לכמה שניות כשהמערכת עולה, ומראה לכם בסטייל שהכל נטען בשקט ברקע. בלי פאניקה.
+            * הגנה ביציאה ובמעברים: מנקה את הזיכרון מאחורי הקלעים כדי שהסטרימר לא יחטוף התקף לב כשאתם יוצאים מהר מדי מסרט או מחליפים ערוצים.
+            * כפתור מילוט מהיר: נתקע הנגן? אל תחפשו את כפתור העצירה. שלוש לחיצות מהירות על כפתור החזור בשלט – והסרט נסגר בשבילך בצורה בטוחה.
+            אפשר לשנות, לכבות או להפעיל את הכל בקלות דרך ההגדרות, כדי שתוכלו ללחוץ בשקט.
+        </description>
+
+        <news>
+            v1.0.0 - גרסה ראשונה ויציבה. הוספת בועות הגנה באתחול ובניגון, הגנה על הזיכרון ביציאה מהירה, ומנגנון חילוץ מהיר בלחיצה משולשת על כפתור החזור.
+        </news>
+
+    </extension>
+
+</addon>
