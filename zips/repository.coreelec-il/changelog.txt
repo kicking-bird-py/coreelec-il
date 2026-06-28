@@ -1,0 +1,19 @@
+[v1.0.1] - עדכון מאגר coreELEC-IL
+- נוסף התוסף Safe Boot Manager (service.safeboot.manager).
+- נוספה תמיכה בספקי שירות: Trakt, TorBox, AllDebrid, Real-Debrid, Premiumize ו-EasyNews.
+- בהתקנה ראשונה, המערכת תשאל אילו ספקים להפעיל — ספק שסומן יופיע בכל אתחול.
+- אם המשתמש לא מחובר — תופיע המלצה להתחבר ישירות, בלי לחפש בהגדרות של POV.
+
+[v1.0.0] - הקמת מאגר coreELEC-IL
+- נוסף תוסף חדש לקטגוריית תוכנות: AutoCompletion [CoreELEC-IL Edition].
+- הגדרות שרת ומבנה תיקיות מעודכן.
+
+[v1.0.1] - coreELEC-IL Repository Update
+- Added Safe Boot Manager addon (service.safeboot.manager).
+- Added support for service providers: Trakt, TorBox, AllDebrid, Real-Debrid, Premiumize and EasyNews.
+- On first install, select which providers to enable — checked on every boot.
+- If not connected, a prompt appears to connect directly without digging through POV settings.
+
+[v1.0.0] - coreELEC-IL Repository Launch
+- Added new addon to Program category: AutoCompletion [CoreELEC-IL Edition].
+- Server configuration and folder structure update.
