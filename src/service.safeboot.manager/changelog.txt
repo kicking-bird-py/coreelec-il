@@ -5,7 +5,7 @@ License:  GPL-3.0-only
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-### [v1.0.0] - גרסה ראשונה ויציבה (CoreELEC-IL)
+### [v1.0.0] - גרסה ראשונה ויציבה (CoreELEC-IL) - 2026-06-27
 
 #### 1. הגנה באתחול המערכת
 
@@ -55,7 +55,19 @@ License:  GPL-3.0-only
 
 ---
 
-### [v1.0.0] - First Stable Release (CoreELEC-IL)
+### [v1.0.1] - 2026-06-28
+
+#### ספקי שירות — שליטה מלאה בהגדרות
+
+* **קטגוריה חדשה "ספקי שירות":** נוספה תמיכה בספקי שירות — Trakt, TorBox, AllDebrid, Real-Debrid, Premiumize ו-EasyNews.
+  בהתקנה ראשונה, המערכת תשאל אילו ספקים רוצים להפעיל — ספק שסומן יופיע בכל אתחול.
+
+* **בדיקת חיבור באתחול:** בכל הפעלת קודי, התוסף בודק אם המשתמש מחובר לספקים שסימן.
+  אם לא — מופיעה המלצה להתחבר ישירות מהמסך, בלי לחפש בהגדרות של POV.
+
+---
+
+### [v1.0.0] - First Stable Release (CoreELEC-IL) - 2026-06-27
 
 #### 1. Startup Protection
 
@@ -102,3 +114,15 @@ License:  GPL-3.0-only
 
 * **No Restart Required:** All setting changes take effect immediately
   without needing to restart Kodi or the addon.
+
+---
+
+### [v1.0.1] - 2026-06-28
+
+#### Service Providers — Full Settings Control
+
+* **New "Service Providers" Category:** Added support for service providers — Trakt, TorBox, AllDebrid, Real-Debrid, Premiumize, and EasyNews.
+  On first install, the system prompts the user to select which providers to enable — selected providers are checked on every boot.
+
+* **Connection Check on Startup:** Every time Kodi starts, the addon checks whether the user is connected to their selected providers.
+  If not — a prompt appears to connect directly, without digging through POV settings.

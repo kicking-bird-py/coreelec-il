@@ -129,6 +129,14 @@ class SafeBootManager(xbmc.Monitor):
         self._double_back_stop    = self.addon.getSettingBool('double_back_stop')
         self._show_busy_overlay   = self.addon.getSettingBool('show_busy_overlay')
 
+        # Provider check settings
+        self._check_trakt         = self.addon.getSettingBool('check_trakt')
+        self._check_torbox        = self.addon.getSettingBool('check_torbox')
+        self._check_alldebrid     = self.addon.getSettingBool('check_alldebrid')
+        self._check_realdebrid    = self.addon.getSettingBool('check_realdebrid')
+        self._check_premiumize    = self.addon.getSettingBool('check_premiumize')
+        self._check_easynews      = self.addon.getSettingBool('check_easynews')
+
         # Constants — always active while the addon is running
         self._show_iptv_loading   = True
         self._clear_temp_on_start = True
@@ -148,6 +156,12 @@ class SafeBootManager(xbmc.Monitor):
         """
         self._show_player_overlay = self.addon.getSettingBool('show_player_overlay')
         self._show_busy_overlay   = self.addon.getSettingBool('show_busy_overlay')
+        self._check_trakt         = self.addon.getSettingBool('check_trakt')
+        self._check_torbox        = self.addon.getSettingBool('check_torbox')
+        self._check_alldebrid     = self.addon.getSettingBool('check_alldebrid')
+        self._check_realdebrid    = self.addon.getSettingBool('check_realdebrid')
+        self._check_premiumize    = self.addon.getSettingBool('check_premiumize')
+        self._check_easynews      = self.addon.getSettingBool('check_easynews')
 
         new_double = self.addon.getSettingBool('double_back_stop')
         if new_double != self._double_back_stop:
@@ -172,10 +186,15 @@ class SafeBootManager(xbmc.Monitor):
         - Player.OnStop   : show brief overlay after playback ends.
         """
         if method == "Player.OnPlay":
-            if self._show_player_overlay and not self.overlay.is_open:
+            keyboard_active = xbmc.getCondVisibility("Window.IsActive(keyboard)")
+            if self._show_player_overlay and not self.overlay.is_open and not keyboard_active:
                 self.overlay.show()
                 for i in range(0, 101, 10):
                     if self.abortRequested():
+                        break
+                    # Stop loading immediately if keyboard opens mid-animation
+                    if xbmc.getCondVisibility("Window.IsActive(keyboard)"):
+                        xbmc.log("SafeBoot: Keyboard detected — aborting player overlay", level=xbmc.LOGINFO)
                         break
                     self.overlay.set_progress(i, self.addon.getLocalizedString(30021))
                     xbmc.sleep(500)
@@ -306,6 +325,27 @@ class SafeBootManager(xbmc.Monitor):
             overlay to prevent accidental keypresses during heavy load.
         """
 
+        # ── First run — enable all providers and open settings ──
+        if self.addon.getSettingBool('first_run'):
+            xbmc.log("SafeBoot: First run detected — enabling all providers", level=xbmc.LOGINFO)
+            self.addon.setSettingBool('check_trakt',      True)
+            self.addon.setSettingBool('check_torbox',     True)
+            self.addon.setSettingBool('check_alldebrid',  True)
+            self.addon.setSettingBool('check_realdebrid', True)
+            self.addon.setSettingBool('check_premiumize', True)
+            self.addon.setSettingBool('check_easynews',   True)
+            self.addon.setSettingBool('first_run',        False)
+            # Reload into memory
+            self._check_trakt      = True
+            self._check_torbox     = True
+            self._check_alldebrid  = True
+            self._check_realdebrid = True
+            self._check_premiumize = True
+            self._check_easynews   = True
+            # Open settings so user can choose
+            xbmc.sleep(2000)
+            xbmc.executebuiltin('Addon.OpenSettings(service.safeboot.manager)')
+
         # ── Boot sequence — only if enabled ──────────────
         if self._enabled:
             self.overlay.show()
@@ -317,6 +357,9 @@ class SafeBootManager(xbmc.Monitor):
                 self.overlay.set_progress(i, self.addon.getLocalizedString(30001))
                 xbmc.sleep(100)
             if self._clear_temp_on_start:
+                # Wait until keyboard is closed before clearing temp files
+                while xbmc.getCondVisibility("Window.IsActive(keyboard)"):
+                    xbmc.sleep(200)
                 self.clear_temp_cache()
             xbmc.sleep(500)
 
@@ -361,45 +404,87 @@ class SafeBootManager(xbmc.Monitor):
                 self.overlay.set_progress(55, self.addon.getLocalizedString(30008))
                 xbmc.sleep(2000)
 
-            # Step 70-100%: check Trakt and TorBox tokens
+            # Step 70-100%: check provider tokens
             for i in range(70, 78):
                 if self.abortRequested():
                     break
                 self.overlay.set_progress(i, self.addon.getLocalizedString(30014))
                 xbmc.sleep(100)
 
-            self.overlay.set_progress(78, self.addon.getLocalizedString(30010))
-            xbmc.sleep(1500)
-            try:
-                pov_addon = xbmcaddon.Addon('plugin.video.pov')
-                if pov_addon.getSetting('trakt.token'):
-                    self.overlay.set_progress(82, self.addon.getLocalizedString(30016))
-                else:
-                    self.overlay.set_progress(82, self.addon.getLocalizedString(30011))
-            except Exception:
-                pass
-            xbmc.sleep(1500)
+            if self._check_trakt:
+                self.overlay.set_progress(78, self.addon.getLocalizedString(30010))
+                xbmc.sleep(1500)
+                try:
+                    pov_addon = xbmcaddon.Addon('plugin.video.pov')
+                    if pov_addon.getSetting('trakt.token'):
+                        self.overlay.set_progress(82, self.addon.getLocalizedString(30016))
+                    else:
+                        self.overlay.set_progress(82, self.addon.getLocalizedString(30011))
+                except Exception:
+                    pass
+                xbmc.sleep(1500)
+            else:
+                xbmc.log("SafeBoot: Trakt check disabled by user", level=xbmc.LOGINFO)
 
-            self.overlay.set_progress(83, self.addon.getLocalizedString(30012))
-            xbmc.sleep(1500)
+            if self._check_torbox:
+                self.overlay.set_progress(83, self.addon.getLocalizedString(30012))
+                xbmc.sleep(1500)
+                try:
+                    pov_addon = xbmcaddon.Addon('plugin.video.pov')
+                    if pov_addon.getSetting('tb.token'):
+                        self.overlay.set_progress(87, self.addon.getLocalizedString(30017))
+                    else:
+                        self.overlay.set_progress(87, self.addon.getLocalizedString(30013))
+                except Exception:
+                    pass
+                xbmc.sleep(1500)
+            else:
+                xbmc.log("SafeBoot: TorBox check disabled by user", level=xbmc.LOGINFO)
+
+            # ── ספקים נוספים — סטטוס בלבד, ללא דיאלוג ──
             try:
                 pov_addon = xbmcaddon.Addon('plugin.video.pov')
-                if pov_addon.getSetting('tb.token'):
-                    self.overlay.set_progress(87, self.addon.getLocalizedString(30017))
-                else:
-                    self.overlay.set_progress(87, self.addon.getLocalizedString(30013))
+                if self._check_alldebrid:
+                    self.overlay.set_progress(89, self.addon.getLocalizedString(30024))
+                    xbmc.sleep(800)
+                    msg = self.addon.getLocalizedString(30026) if pov_addon.getSetting('ad.token') else self.addon.getLocalizedString(30025)
+                    self.overlay.set_progress(90, msg)
+                    xbmc.sleep(800)
+
+                if self._check_realdebrid:
+                    self.overlay.set_progress(91, self.addon.getLocalizedString(30028))
+                    xbmc.sleep(800)
+                    msg = self.addon.getLocalizedString(30030) if pov_addon.getSetting('rd.token') else self.addon.getLocalizedString(30029)
+                    self.overlay.set_progress(93, msg)
+                    xbmc.sleep(800)
+
+                if self._check_premiumize:
+                    self.overlay.set_progress(94, self.addon.getLocalizedString(30032))
+                    xbmc.sleep(800)
+                    msg = self.addon.getLocalizedString(30034) if pov_addon.getSetting('pm.token') else self.addon.getLocalizedString(30033)
+                    self.overlay.set_progress(96, msg)
+                    xbmc.sleep(800)
+
+                if self._check_easynews:
+                    self.overlay.set_progress(97, self.addon.getLocalizedString(30036))
+                    xbmc.sleep(800)
+                    msg = self.addon.getLocalizedString(30038) if pov_addon.getSetting('easynews_user') else self.addon.getLocalizedString(30037)
+                    self.overlay.set_progress(99, msg)
+                    xbmc.sleep(800)
             except Exception:
                 pass
-            xbmc.sleep(1500)
 
             self.overlay.set_progress(100, self.addon.getLocalizedString(30018))
             xbmc.sleep(3000)
             self.overlay.close()
 
-            self.check_service('trakt.token', 'Trakt',
-                               self.addon.getLocalizedString(30022))
-            self.check_service('tb.token', 'TorBox',
-                               self.addon.getLocalizedString(30023))
+            # דיאלוג התחברות — רק Trakt ו-TorBox
+            if self._check_trakt:
+                self.check_service('trakt.token', 'Trakt',
+                                   self.addon.getLocalizedString(30022))
+            if self._check_torbox:
+                self.check_service('tb.token', 'TorBox',
+                                   self.addon.getLocalizedString(30023))
 
         else:
             xbmc.log("SafeBoot: startup disabled — skipping boot sequence", level=xbmc.LOGINFO)
@@ -412,10 +497,13 @@ class SafeBootManager(xbmc.Monitor):
         else:
             counter = 0
             while not self.abortRequested():
+                keyboard_active = xbmc.getCondVisibility("Window.IsActive(keyboard)")
                 is_busy = (
-                    xbmc.getCondVisibility("Window.IsActive(busydialog)") or
-                    xbmc.getCondVisibility("Library.IsScanningVideo")     or
-                    xbmc.getCondVisibility("Pvr.IsScanning")
+                    not keyboard_active and (
+                        xbmc.getCondVisibility("Window.IsActive(busydialog)") or
+                        xbmc.getCondVisibility("Library.IsScanningVideo")     or
+                        xbmc.getCondVisibility("Pvr.IsScanning")
+                    )
                 )
                 if is_busy:
                     if not self.overlay.is_open:
