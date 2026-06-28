@@ -97,7 +97,7 @@
         <source>https://github.com/kicking-bird-py/open-source/plugin.program.autocompletion</source>
     </extension>
 </addon>    
-</addon>
+
 <addon id="service.safeboot.manager"
        name="Safe Boot Manager"
        version="1.0.1"
