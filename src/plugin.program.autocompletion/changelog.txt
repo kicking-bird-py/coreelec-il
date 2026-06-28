@@ -1,3 +1,18 @@
+---
+
+---
+
+### [v3.0.1] - 2026-06-29
+
+#### תיקוני באגים ושיפורים
+
+* **clean_for_provider סוף-סוף רצה בפועל:** בגרסה 3.0.0 פונקציית הניקוי הוגדרה אך לא נקראה בפועל לפני שליחת הטקסט ל-POV. כעת היא מופעלת בעת בחירת תוצאה, ממש לפני שליחת מחרוזת החיפוש.
+* **תיקון מספרים תלויים:** בעבר, הסרת מילה כמו "עונה"/"Season" השאירה מספר תקוע מאחור (למשל "שם הסדרה 8"), מה שפגע בחיפוש ב-Scraper. לוגיקת הניקוי כעת מסירה את המספר/הטווח שאחרי המילה יחד איתה.
+* **מילון מקטגוריות עם תמיכה בתחיליות:** רשימת מילות הזבל נבנתה מחדש לקטגוריות (עונה/פרק, סוג תוכן, ביקורות, סטרימינג/איכות, רעשי אתרים), עם הכרה בתחיליות עבריות (ה-/ו-/ש-/ב-/כ-/ל-/מ-) כך שצורות כמו "הסדרה" או "ולצפייה" מזוהות גם הן.
+* **הוספת תמיכה באנגלית:** מילון הניקוי מכיר כעת גם מילות זבל באנגלית (Season, Episode, Full Movie, Watch Online, HD, Review וכו'), ללא תלות באותיות גדולות/קטנות, בנוסף למילים בעברית.
+
+---
+
 ### [v3.0.0] - גרסה משופרת ועצמאית (CoreELEC-IL)
 
 #### 1. ארכיטקטורה ועצמאות המערכת
@@ -41,6 +56,17 @@
 - הוספת מנוע חיפוש Bing כספק תוצאות.
 - תיקון ספק התוצאות המקומי (localdict).
 
+
+### [v3.0.1] - 2026-06-29
+
+#### Bug Fixes & Improvements
+
+* **`clean_for_provider` Now Actually Runs:** In v3.0.0 the cleaning function was defined but never called before sending text to POV. It is now invoked on selection, right before the search string is sent.
+* **Leftover Numbers Removed:** Previously, removing a word like "עונה"/"Season" left a stray number behind (e.g. "Show Name 8"), which broke the provider search. The cleaning logic now removes the trailing number/range together with the word.
+* **Categorized, Prefix-Aware Dictionary:** The garbage-word list was rebuilt into categories (season/episode, content type, reviews, streaming/quality, site noise), with Hebrew prefix recognition (ה-/ו-/ש-/ב-/כ-/ל-/מ-) so forms like "הסדרה" or "ולצפייה" are caught too.
+* **English Support Added:** The cleaning dictionary now also recognizes English garbage terms (Season, Episode, Full Movie, Watch Online, HD, Review, etc.), case-insensitively, alongside the existing Hebrew terms.
+
+---
 
 ### [v3.0.0] - New Improved & Independent Version (CoreELEC-IL)
 

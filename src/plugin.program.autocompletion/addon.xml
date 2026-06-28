@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.program.autocompletion"
        name="AutoCompletion [CoreELEC-IL Edition]" 
-       version="3.0.0"
+       version="3.0.1"
        provider-name="Philipp Temminghoff, sualfred, xulek, kicking-bird-py | CoreELEC-IL">
     
     <requires>
@@ -28,6 +28,11 @@
         <disclaimer lang="he_IL">התוסף מסופק כפי שהוא (AS-IS). פותח ואומת עבור קהילת CoreELEC-IL על גבי חומרת Homatics בגרסת NG. שימוש על מערכות אחרות הוא על אחריות המשתמש.</disclaimer>
 
         <news lang="en_GB">
+                [v3.0.1] - Bug Fix Update
+                - [Fix] 'clean_for_provider' is now actually invoked before sending text to POV (it was defined but never called in v3.0.0).
+                - [Fix] The cleaning logic now also strips trailing season/episode/part numbers attached to garbage words (e.g. "Season 8", "עונה 8"), not just the word itself.
+                - [Improvement] Rebuilt the cleaning dictionary into categorized, prefix-aware rules (Hebrew prefixes like ה-/ו-/ש- are now recognized) with full English-language support added alongside Hebrew.
+
                 [v3.0.0] - CoreELEC-IL Major Update
                 - [Architecture] Integrated Package: Script and modules are built-in. No additional addons or dependencies will be installed.
                 - [UX] Ready-to-Use: No manual settings required. Search language and RTL are pre-configured for Hebrew.
@@ -38,16 +43,7 @@
                 - [Performance] Added 7-day intelligent caching and 10s network timeout.
         </news>
 
-        <news lang="he_IL">
-                [v3.0.0] - עדכון משמעותי CoreELEC-IL
-                - [ארכיטקטורה] חבילה אחודה: רכיבי הסקריפט והמודולים מוטמעים בפנים. ההתקנה אינה כוללת ואינה דורשת התקנת הרחבות נוספות.
-                - [חוויית משתמש] ללא צורך בהגדרות: התוסף מוגדר מראש לעבודה בעברית (שפת חיפוש ו-RTL) מיד עם ההתקנה.
-                - [דרישה] מחייב סקין תומך: Arctic Fuse, AH2, Titan BINGE, FENtastic, Nimbus, Embuary ועוד.
-                - [חומרה] נבדק ואומת באופן מלא על Homatics Box R 4K Plus (גרסת CoreELEC NG).
-                - [פיתוח] הסבה מלאה ל-Python 3 ושכתוב הקוד.
-                - [אופטימיזציית POV] ניקוי נתונים חכם לשיפור תוצאות חיפוש ב-Scrapers.
-                - [ביצועים] מערכת זיכרון מטמון ל-7 ימים ו-Timeout למניעת תקיעות.
-        </news>
+
         <assets>
         <icon>icon.png</icon>
         </assets>

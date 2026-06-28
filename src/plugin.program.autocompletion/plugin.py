@@ -65,13 +65,12 @@ def run():
         xbmc.sleep(100)
         
         search_term = params.get("id", "")
-        is_suggestion = params.get("is_suggestion") == "true"
+        cleaned_term = AutoCompletion.clean_for_provider(search_term)
+        xbmc.log(f"[AutoCompletion] sending to POV: '{cleaned_term}' (raw: '{search_term}')", xbmc.LOGINFO)
         
-        # [CoreELEC-IL] POV Optimization: Strip "garbage" keywords if a suggestion was selected.
-        final_text = AutoCompletion.clean_for_provider(search_term) if is_suggestion else search_term
-            
-        # [CoreELEC-IL] Modernized JSON-RPC: Using 'Input.SendText' with immediate submission.
-        get_kodi_json('Input.SendText', {"text": final_text, "done": True})
+        # [CoreELEC-IL] FIX: Apply clean_for_provider here, right before sending to POV,
+        # so garbage words like "סרט"/"עונה"/"פרק" don't break the provider's search.
+        get_kodi_json('Input.SendText', {"text": cleaned_term, "done": True})
 
 if __name__ == "__main__":
     run()
