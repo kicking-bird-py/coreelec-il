@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="repository.coreelec-il" name="coreELEC-IL Repository" version="1.0.0"
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="repository.coreelec-il" name="coreELEC-IL Repository" version="1.0.1"
     provider-name="kicking-bird-py | CoreELEC-IL">
     <extension point="xbmc.addon.repository" name="coreELEC-IL Repository">
     <dir>
     <info compressed="false">https://raw.githubusercontent.com/kicking-bird-py/coreelec-il/main/addons.xml</info>
-    <checksum>https://raw.githubusercontent.com/kicking-bird-py/coreelec-il/main/addons.xml.md5</checksum>    
+    <checksum>https://raw.githubusercontent.com/kicking-bird-py/coreelec-il/main/addons.xml.md5</checksum>
     <datadir zip="true">https://raw.githubusercontent.com/kicking-bird-py/coreelec-il/main/zips</datadir>
     </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary lang="en_GB">The Official coreELEC-IL Community Repository</summary>
         <description lang="en_GB">Install addons from coreELEC-IL</description>
-
         <summary lang="he_IL">המאגר הרשמי של קהילת coreELEC-IL</summary>
         <description lang="he_IL">התקנת הרחבות מבית coreELEC-IL</description>
+        
+        <news>
+            [v1.0.1] - coreELEC-IL Repository Update
+            - Added Safe Boot Manager addon (service.safeboot.manager).
+            - Added support for service providers: Trakt, TorBox, AllDebrid, Real-Debrid, Premiumize and EasyNews.
+            - On first install, select which providers to enable — checked on every boot.
+            - If not connected, a prompt appears to connect directly without digging through POV settings.
 
-        <news lang="he_IL">
-            [v1.0.0] - הקמת מאגר coreELEC-IL
-            - נוסף תוסף חדש לקטגוריית תוכנות: AutoCompletion [CoreELEC-IL Edition].
-            - הגדרות שרת ומבנה תיקיות מעודכן.
-        </news>
-
-        <news lang="en_GB">
             [v1.0.0] - coreELEC-IL Repository Launch
             - Added new addon to Program category: AutoCompletion [CoreELEC-IL Edition].
             - Server configuration and folder structure update.
         </news>
+
+
+        
+        <disclaimer lang="en_GB">This addon is provided AS-IS. Developed and verified for the CoreELEC-IL community on Homatics hardware running the NG version. Use on other systems at your own risk.</disclaimer>
+        <disclaimer lang="he_IL">התוסף מסופק כפי שהוא (AS-IS). פותח ואומת עבור קהילת CoreELEC-IL על גבי חומרת Homatics בגרסת NG. שימוש על מערכות אחרות הוא על אחריות המשתמש.</disclaimer>
 
         <platform>all</platform>
         <assets>
