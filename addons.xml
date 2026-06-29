@@ -100,7 +100,7 @@
 
 <addon id="service.safeboot.manager"
        name="Safe Boot Manager"
-       version="1.0.2"
+       version="1.0.3"
        provider-name="kicking-bird-py | CoreELEC-IL">
 
     <requires>
@@ -140,7 +140,7 @@
 
         <news>
            
-
+            
             v1.0.2 - [Security Fix] Introduced a single, mandatory access point (get_provider_token) for reading
             any credential from POV, used by all six providers — Trakt, TorBox, AllDebrid, Real-Debrid, Premiumize,
             and EasyNews. Any token logging now automatically goes through masking (last 4 characters visible only),
