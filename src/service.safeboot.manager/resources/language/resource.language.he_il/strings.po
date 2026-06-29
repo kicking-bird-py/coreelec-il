@@ -53,7 +53,7 @@ msgstr " בודק חיבור ל-Trakt..."
 
 msgctxt "#30011"
 msgid ""
-msgstr " אין חיבור לשירות Trakt"
+msgstr " שירות Trakt לא מחובר"
 
 msgctxt "#30012"
 msgid ""
@@ -61,7 +61,7 @@ msgstr " בודק חיבור ל-TorBox..."
 
 msgctxt "#30013"
 msgid ""
-msgstr " אין חיבור ל-TorBox"
+msgstr " TorBox לא מחובר"
 
 msgctxt "#30014"
 msgid ""
@@ -81,7 +81,7 @@ msgstr "✔ מחובר ל-TorBox"
 
 msgctxt "#30018"
 msgid ""
-msgstr "קודי מוכן ✔"
+msgstr "Kodi מוכן ✔"
 
 msgctxt "#30019"
 msgid ""
@@ -109,15 +109,11 @@ msgstr " בודק חיבור ל-AllDebrid..."
 
 msgctxt "#30025"
 msgid ""
-msgstr " אין חיבור ל-AllDebrid"
+msgstr " שירות AllDebrid לא מחובר"
 
 msgctxt "#30026"
 msgid ""
 msgstr "✔ מחובר ל-AllDebrid"
-
-msgctxt "#30027"
-msgid ""
-msgstr "AllDebrid לא מחובר. האם לפתוח חלון התחברות?"
 
 msgctxt "#30028"
 msgid ""
@@ -125,15 +121,11 @@ msgstr " בודק חיבור ל-Real-Debrid..."
 
 msgctxt "#30029"
 msgid ""
-msgstr " אין חיבור ל-Real-Debrid"
+msgstr " שירות Real-Debrid לא מחובר"
 
 msgctxt "#30030"
 msgid ""
 msgstr "✔ מחובר ל-Real-Debrid"
-
-msgctxt "#30031"
-msgid ""
-msgstr "Real-Debrid לא מחובר. האם לפתוח חלון התחברות?"
 
 msgctxt "#30032"
 msgid ""
@@ -141,15 +133,11 @@ msgstr " בודק חיבור ל-Premiumize..."
 
 msgctxt "#30033"
 msgid ""
-msgstr " אין חיבור ל-Premiumize"
+msgstr " שירות Premiumize לא מחובר"
 
 msgctxt "#30034"
 msgid ""
 msgstr "✔ מחובר ל-Premiumize"
-
-msgctxt "#30035"
-msgid ""
-msgstr "Premiumize לא מחובר. האם לפתוח חלון התחברות?"
 
 msgctxt "#30036"
 msgid ""
@@ -157,15 +145,15 @@ msgstr " בודק חיבור ל-EasyNews..."
 
 msgctxt "#30037"
 msgid ""
-msgstr " אין חיבור ל-EasyNews"
+msgstr " שירות EasyNews לא מחובר"
 
 msgctxt "#30038"
 msgid ""
 msgstr "✔ מחובר ל-EasyNews"
 
-msgctxt "#30039"
+msgctxt "#30040"
 msgid ""
-msgstr "EasyNews לא מחובר. האם לפתוח חלון התחברות?"
+msgstr "%s לא מחובר. האם לפתוח חלון התחברות?"
 
 # ── הגדרות משתמש ──────────────────────────────
 
@@ -189,8 +177,6 @@ msgctxt "#32008"
 msgid ""
 msgstr "הפעל את Safe Boot Manager"
 
-
-
 msgctxt "#32011"
 msgid ""
 msgstr "לחיצה כפולה על חזור לעצירת הנגן"
@@ -206,31 +192,3 @@ msgstr "יציאה מנגן"
 msgctxt "#32014"
 msgid ""
 msgstr "הצג מסך המתנה בעומס מערכת"
-
-msgctxt "#32020"
-msgid ""
-msgstr "ספקי שירות"
-
-msgctxt "#32021"
-msgid ""
-msgstr "בדוק חיבור ל-Trakt באתחול"
-
-msgctxt "#32022"
-msgid ""
-msgstr "בדוק חיבור ל-TorBox באתחול"
-
-msgctxt "#32023"
-msgid ""
-msgstr "בדוק חיבור ל-AllDebrid באתחול"
-
-msgctxt "#32024"
-msgid ""
-msgstr "בדוק חיבור ל-Real-Debrid באתחול"
-
-msgctxt "#32025"
-msgid ""
-msgstr "בדוק חיבור ל-Premiumize באתחול"
-
-msgctxt "#32026"
-msgid ""
-msgstr "בדוק חיבור ל-EasyNews באתחול"

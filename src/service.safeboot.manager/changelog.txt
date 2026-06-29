@@ -5,6 +5,43 @@ License:  GPL-3.0-only
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+
+
+
+---
+
+### [v1.0.2] - 2026-06-29
+
+#### תיקוני אבטחה ובאגים
+
+* **תיקון אבטחה — הסתרת טוקנים בלוג, לכל הספקים:** נוספה נקודת גישה מרכזית ויחידה (`get_provider_token`) לקריאת טוקנים/פרטי חיבור מ-POV, שמשמשת את כל שישה הספקים — Trakt, TorBox, AllDebrid, Real-Debrid, Premiumize ו-EasyNews.
+  קודם, רק Trakt ו-TorBox היו בסיכון של חשיפת טוקן מלא בלוג. כעת ההגנה מובנית במבנה הקוד עצמו: כל לוג עתידי שיתבצע על טוקן, לכל ספק קיים או עתידי, יעבור אוטומטית דרך מיסוך (4 תווים אחרונים בלבד נראים), ולא ייתכן יותר לדלג עליה בטעות.
+
+* **תיקון שגיאת "Can't find window keyboard":** תוקן שם החלון השגוי ששימש לבדיקת המקלדת על המסך —
+  מ-"keyboard" לשם הנכון בקודי "virtualkeyboard". התיקון חל על כל הבדיקות בקוד: רצף האתחול, ה-overlay של הנגן, ו-Guardian loop.
+
+
+
+#### תכונה חדשה ותיקון מחרוזות חסרות
+
+* **דיאלוג "להתחבר עכשיו?" לכל שישה הספקים:** ההצעה האינטראקטיבית להתחברות (שהייתה זמינה בעבר רק ל-Trakt ול-TorBox) מופיעה כעת גם ל-AllDebrid, Real-Debrid, Premiumize ו-EasyNews.
+
+* **תיקון מחרוזות תרגום חסרות:** נוספו ל-strings.po מחרוזות הסטטוס של AllDebrid, Real-Debrid, Premiumize ו-EasyNews, שהיו מוזכרות בקוד אך חסרו מהקובץ — מה שגרם לטקסט ריק במהלך האתחול עבור ספקים אלה.
+
+---
+
+### [v1.0.1] - 2026-06-28
+
+#### ספקי שירות — שליטה מלאה בהגדרות
+
+* **קטגוריה חדשה "ספקי שירות":** נוספה תמיכה בספקי שירות — Trakt, TorBox, AllDebrid, Real-Debrid, Premiumize ו-EasyNews.
+  בהתקנה ראשונה, המערכת תשאל אילו ספקים רוצים להפעיל — ספק שסומן יופיע בכל אתחול.
+
+* **בדיקת חיבור באתחול:** בכל הפעלת קודי, התוסף בודק אם המשתמש מחובר לספקים שסימן.
+  אם לא — מופיעה המלצה להתחבר ישירות מהמסך, בלי לחפש בהגדרות של POV.
+
+---
+
 ### [v1.0.0] - גרסה ראשונה ויציבה (CoreELEC-IL) - 2026-06-27
 
 #### 1. הגנה באתחול המערכת
@@ -55,15 +92,40 @@ License:  GPL-3.0-only
 
 ---
 
+
+
+
+
+### [v1.0.2] - 2026-06-29
+
+#### Security & Bug Fixes
+
+* **Security Fix — Centralized Token Masking for All Providers:** Introduced a single, mandatory access point (`get_provider_token`) for reading any credential from POV, used by all six providers — Trakt, TorBox, AllDebrid, Real-Debrid, Premiumize, and EasyNews.
+  Previously, only Trakt and TorBox were at risk of having a full token logged in clear text. Protection is now built into the code's structure itself: any future logging of a token, for any current or future provider, automatically goes through masking (only the last 4 characters visible) — it can no longer be accidentally skipped.
+
+* **Fixed "Can't find window keyboard" Error:** Corrected the window name used to detect the on-screen keyboard —
+  changed from the invalid "keyboard" to Kodi's actual window name, "virtualkeyboard". Applied across all checks: the boot sequence, the player overlay, and the Guardian loop.
+
+
+#### New Feature & Missing Strings Fix
+
+* **"Connect Now?" Dialog for All 6 Providers:** The interactive connect prompt (previously only shown for Trakt and TorBox) now also appears for AllDebrid, Real-Debrid, Premiumize, and EasyNews.
+
+* **Fixed Missing Localization Strings:** Added the status strings for AllDebrid, Real-Debrid, Premiumize, and EasyNews to strings.po — they were referenced by the code but missing from the file, causing blank status text during boot for these providers.
+
+---
+
+---
+
 ### [v1.0.1] - 2026-06-28
 
-#### ספקי שירות — שליטה מלאה בהגדרות
+#### Service Providers — Full Settings Control
 
-* **קטגוריה חדשה "ספקי שירות":** נוספה תמיכה בספקי שירות — Trakt, TorBox, AllDebrid, Real-Debrid, Premiumize ו-EasyNews.
-  בהתקנה ראשונה, המערכת תשאל אילו ספקים רוצים להפעיל — ספק שסומן יופיע בכל אתחול.
+* **New "Service Providers" Category:** Added support for service providers — Trakt, TorBox, AllDebrid, Real-Debrid, Premiumize, and EasyNews.
+  On first install, the system prompts the user to select which providers to enable — selected providers are checked on every boot.
 
-* **בדיקת חיבור באתחול:** בכל הפעלת קודי, התוסף בודק אם המשתמש מחובר לספקים שסימן.
-  אם לא — מופיעה המלצה להתחבר ישירות מהמסך, בלי לחפש בהגדרות של POV.
+* **Connection Check on Startup:** Every time Kodi starts, the addon checks whether the user is connected to their selected providers.
+  If not — a prompt appears to connect directly, without digging through POV settings.
 
 ---
 
@@ -114,15 +176,3 @@ License:  GPL-3.0-only
 
 * **No Restart Required:** All setting changes take effect immediately
   without needing to restart Kodi or the addon.
-
----
-
-### [v1.0.1] - 2026-06-28
-
-#### Service Providers — Full Settings Control
-
-* **New "Service Providers" Category:** Added support for service providers — Trakt, TorBox, AllDebrid, Real-Debrid, Premiumize, and EasyNews.
-  On first install, the system prompts the user to select which providers to enable — selected providers are checked on every boot.
-
-* **Connection Check on Startup:** Every time Kodi starts, the addon checks whether the user is connected to their selected providers.
-  If not — a prompt appears to connect directly, without digging through POV settings.

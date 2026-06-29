@@ -9,6 +9,41 @@ import threading
 from ui import BlockOverlay
 
 
+def mask_token(token, visible_chars=4):
+    """
+    [CoreELEC-IL] SECURITY FIX:
+    Never write a full token/secret to kodi.log. Returns a masked
+    version showing only the last `visible_chars` characters, e.g.
+    '9c0ad7...010' style — enough for the user to recognize "yes that's
+    the right token" without exposing the value to anyone who reads
+    or shares the log file.
+    """
+    if not token:
+        return ""
+    token = str(token)
+    if len(token) <= visible_chars:
+        return "*" * len(token)
+    return ("*" * (len(token) - visible_chars)) + token[-visible_chars:]
+
+
+def get_provider_token(pov_addon, setting_name, log=False):
+    """
+    [CoreELEC-IL] SECURITY: Single, mandatory entry point for reading any
+    provider credential (Trakt, TorBox, AllDebrid, Real-Debrid, Premiumize,
+    EasyNews, or anything added later) from the POV addon settings.
+
+    This exists so that NO call site ever reads pov_addon.getSetting(...)
+    directly for a token/credential. If logging is ever needed for
+    debugging, it goes through mask_token() here — automatically, for
+    every current and future provider — instead of relying on whoever
+    writes the next provider integration to remember to mask it manually.
+    """
+    value = pov_addon.getSetting(setting_name)
+    if log:
+        xbmc.log("SafeBoot: %s = '%s'" % (setting_name, mask_token(value)), level=xbmc.LOGINFO)
+    return value
+
+
 # ────────────────────────────────────────────────
 #  BackKeyWatcher — detects double back-key press
 #  only during active playback (video / IPTV / radio)
@@ -186,14 +221,14 @@ class SafeBootManager(xbmc.Monitor):
         - Player.OnStop   : show brief overlay after playback ends.
         """
         if method == "Player.OnPlay":
-            keyboard_active = xbmc.getCondVisibility("Window.IsActive(keyboard)")
+            keyboard_active = xbmc.getCondVisibility("Window.IsActive(virtualkeyboard)")
             if self._show_player_overlay and not self.overlay.is_open and not keyboard_active:
                 self.overlay.show()
                 for i in range(0, 101, 10):
                     if self.abortRequested():
                         break
                     # Stop loading immediately if keyboard opens mid-animation
-                    if xbmc.getCondVisibility("Window.IsActive(keyboard)"):
+                    if xbmc.getCondVisibility("Window.IsActive(virtualkeyboard)"):
                         xbmc.log("SafeBoot: Keyboard detected — aborting player overlay", level=xbmc.LOGINFO)
                         break
                     self.overlay.set_progress(i, self.addon.getLocalizedString(30021))
@@ -256,15 +291,16 @@ class SafeBootManager(xbmc.Monitor):
 
 
     def check_service(self, setting_name, title, message):
-        """Check if a third-party token (Trakt / TorBox) is set.
+        """Check if a third-party provider token/credential is set.
 
-        If the token is missing, prompts the user with a yes/no dialog.
-        On confirmation, opens the POV addon's service management screen.
+        Generic for all 6 supported providers (Trakt, TorBox, AllDebrid,
+        Real-Debrid, Premiumize, EasyNews). If the token is missing,
+        prompts the user with a yes/no dialog. On confirmation, opens the
+        POV addon's service management screen.
         """
         try:
             pov_addon = xbmcaddon.Addon('plugin.video.pov')
-            token = pov_addon.getSetting(setting_name)
-            xbmc.log("SafeBoot: %s = '%s'" % (setting_name, token), level=xbmc.LOGINFO)
+            token = get_provider_token(pov_addon, setting_name, log=True)
             if not token:
                 xbmc.log("SafeBoot: %s not connected" % title, level=xbmc.LOGINFO)
                 if xbmcgui.Dialog().yesno(title, message):
@@ -358,7 +394,7 @@ class SafeBootManager(xbmc.Monitor):
                 xbmc.sleep(100)
             if self._clear_temp_on_start:
                 # Wait until keyboard is closed before clearing temp files
-                while xbmc.getCondVisibility("Window.IsActive(keyboard)"):
+                while xbmc.getCondVisibility("Window.IsActive(virtualkeyboard)"):
                     xbmc.sleep(200)
                 self.clear_temp_cache()
             xbmc.sleep(500)
@@ -416,7 +452,7 @@ class SafeBootManager(xbmc.Monitor):
                 xbmc.sleep(1500)
                 try:
                     pov_addon = xbmcaddon.Addon('plugin.video.pov')
-                    if pov_addon.getSetting('trakt.token'):
+                    if get_provider_token(pov_addon, 'trakt.token'):
                         self.overlay.set_progress(82, self.addon.getLocalizedString(30016))
                     else:
                         self.overlay.set_progress(82, self.addon.getLocalizedString(30011))
@@ -431,7 +467,7 @@ class SafeBootManager(xbmc.Monitor):
                 xbmc.sleep(1500)
                 try:
                     pov_addon = xbmcaddon.Addon('plugin.video.pov')
-                    if pov_addon.getSetting('tb.token'):
+                    if get_provider_token(pov_addon, 'tb.token'):
                         self.overlay.set_progress(87, self.addon.getLocalizedString(30017))
                     else:
                         self.overlay.set_progress(87, self.addon.getLocalizedString(30013))
@@ -441,34 +477,34 @@ class SafeBootManager(xbmc.Monitor):
             else:
                 xbmc.log("SafeBoot: TorBox check disabled by user", level=xbmc.LOGINFO)
 
-            # ── ספקים נוספים — סטטוס בלבד, ללא דיאלוג ──
+            # ── ספקים נוספים — סטטוס בזמן האתחול (הדיאלוג עצמו מופיע בהמשך, אחרי סגירת ה-overlay) ──
             try:
                 pov_addon = xbmcaddon.Addon('plugin.video.pov')
                 if self._check_alldebrid:
                     self.overlay.set_progress(89, self.addon.getLocalizedString(30024))
                     xbmc.sleep(800)
-                    msg = self.addon.getLocalizedString(30026) if pov_addon.getSetting('ad.token') else self.addon.getLocalizedString(30025)
+                    msg = self.addon.getLocalizedString(30026) if get_provider_token(pov_addon, 'ad.token') else self.addon.getLocalizedString(30025)
                     self.overlay.set_progress(90, msg)
                     xbmc.sleep(800)
 
                 if self._check_realdebrid:
                     self.overlay.set_progress(91, self.addon.getLocalizedString(30028))
                     xbmc.sleep(800)
-                    msg = self.addon.getLocalizedString(30030) if pov_addon.getSetting('rd.token') else self.addon.getLocalizedString(30029)
+                    msg = self.addon.getLocalizedString(30030) if get_provider_token(pov_addon, 'rd.token') else self.addon.getLocalizedString(30029)
                     self.overlay.set_progress(93, msg)
                     xbmc.sleep(800)
 
                 if self._check_premiumize:
                     self.overlay.set_progress(94, self.addon.getLocalizedString(30032))
                     xbmc.sleep(800)
-                    msg = self.addon.getLocalizedString(30034) if pov_addon.getSetting('pm.token') else self.addon.getLocalizedString(30033)
+                    msg = self.addon.getLocalizedString(30034) if get_provider_token(pov_addon, 'pm.token') else self.addon.getLocalizedString(30033)
                     self.overlay.set_progress(96, msg)
                     xbmc.sleep(800)
 
                 if self._check_easynews:
                     self.overlay.set_progress(97, self.addon.getLocalizedString(30036))
                     xbmc.sleep(800)
-                    msg = self.addon.getLocalizedString(30038) if pov_addon.getSetting('easynews_user') else self.addon.getLocalizedString(30037)
+                    msg = self.addon.getLocalizedString(30038) if get_provider_token(pov_addon, 'easynews_user') else self.addon.getLocalizedString(30037)
                     self.overlay.set_progress(99, msg)
                     xbmc.sleep(800)
             except Exception:
@@ -478,13 +514,29 @@ class SafeBootManager(xbmc.Monitor):
             xbmc.sleep(3000)
             self.overlay.close()
 
-            # דיאלוג התחברות — רק Trakt ו-TorBox
+            
+            # [CoreELEC-IL] Previously only Trakt/TorBox got an actionable
+            # "connect now?" prompt; AllDebrid/Real-Debrid/Premiumize/EasyNews
+            # only showed a passive status line during boot. Extended so any
+            # unconnected, user-enabled provider gets the same prompt.
             if self._check_trakt:
                 self.check_service('trakt.token', 'Trakt',
                                    self.addon.getLocalizedString(30022))
             if self._check_torbox:
                 self.check_service('tb.token', 'TorBox',
                                    self.addon.getLocalizedString(30023))
+            if self._check_alldebrid:
+                self.check_service('ad.token', 'AllDebrid',
+                                   self.addon.getLocalizedString(30040) % 'AllDebrid')
+            if self._check_realdebrid:
+                self.check_service('rd.token', 'Real-Debrid',
+                                   self.addon.getLocalizedString(30040) % 'Real-Debrid')
+            if self._check_premiumize:
+                self.check_service('pm.token', 'Premiumize',
+                                   self.addon.getLocalizedString(30040) % 'Premiumize')
+            if self._check_easynews:
+                self.check_service('easynews_user', 'EasyNews',
+                                   self.addon.getLocalizedString(30040) % 'EasyNews')
 
         else:
             xbmc.log("SafeBoot: startup disabled — skipping boot sequence", level=xbmc.LOGINFO)
@@ -497,7 +549,7 @@ class SafeBootManager(xbmc.Monitor):
         else:
             counter = 0
             while not self.abortRequested():
-                keyboard_active = xbmc.getCondVisibility("Window.IsActive(keyboard)")
+                keyboard_active = xbmc.getCondVisibility("Window.IsActive(virtualkeyboard)")
                 is_busy = (
                     not keyboard_active and (
                         xbmc.getCondVisibility("Window.IsActive(busydialog)") or

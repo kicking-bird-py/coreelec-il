@@ -103,6 +103,58 @@ msgctxt "#30023"
 msgid ""
 msgstr "TorBox is not connected. Open the login window?"
 
+msgctxt "#30024"
+msgid ""
+msgstr " Checking AllDebrid connection..."
+
+msgctxt "#30025"
+msgid ""
+msgstr " AllDebrid service not connected"
+
+msgctxt "#30026"
+msgid ""
+msgstr "✔ Connected to AllDebrid"
+
+msgctxt "#30028"
+msgid ""
+msgstr " Checking Real-Debrid connection..."
+
+msgctxt "#30029"
+msgid ""
+msgstr " Real-Debrid service not connected"
+
+msgctxt "#30030"
+msgid ""
+msgstr "✔ Connected to Real-Debrid"
+
+msgctxt "#30032"
+msgid ""
+msgstr " Checking Premiumize connection..."
+
+msgctxt "#30033"
+msgid ""
+msgstr " Premiumize service not connected"
+
+msgctxt "#30034"
+msgid ""
+msgstr "✔ Connected to Premiumize"
+
+msgctxt "#30036"
+msgid ""
+msgstr " Checking EasyNews connection..."
+
+msgctxt "#30037"
+msgid ""
+msgstr " EasyNews service not connected"
+
+msgctxt "#30038"
+msgid ""
+msgstr "✔ Connected to EasyNews"
+
+msgctxt "#30040"
+msgid ""
+msgstr "%s is not connected. Open the login window?"
+
 # ── User Settings ──────────────────────────────
 
 msgctxt "#32000"
