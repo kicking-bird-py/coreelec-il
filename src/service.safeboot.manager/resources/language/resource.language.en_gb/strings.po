@@ -165,7 +165,7 @@ msgid "Safe Boot Manager"
 msgstr  ""
 
 msgctxt "#32001"
-msgid "Startup"
+msgid "Startup & System"
 msgstr  "" 
 
 msgctxt "#32005"

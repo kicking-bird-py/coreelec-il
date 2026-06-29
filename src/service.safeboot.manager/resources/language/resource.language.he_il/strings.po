@@ -161,7 +161,7 @@ msgstr "%s לא מחובר. לפתוח חלון התחברות?"
 
 msgctxt "#32000"
 msgid ""
-msgstr "מנהל אתחול בטוח (Safe Boot)"
+msgstr "אתחול מערכת"
 
 msgctxt "#32001"
 msgid ""
