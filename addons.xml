@@ -100,7 +100,7 @@
 
 <addon id="service.safeboot.manager"
        name="Safe Boot Manager"
-       version="1.0.1"
+       version="1.0.2"
        provider-name="kicking-bird-py | CoreELEC-IL">
 
     <requires>
@@ -139,6 +139,22 @@
         </description>
 
         <news>
+           
+
+            v1.0.2 - [Security Fix] Introduced a single, mandatory access point (get_provider_token) for reading
+            any credential from POV, used by all six providers — Trakt, TorBox, AllDebrid, Real-Debrid, Premiumize,
+            and EasyNews. Any token logging now automatically goes through masking (last 4 characters visible only),
+            instead of relying on each call site to remember to mask it.
+            [Bug Fix] Fixed "Can't find window keyboard" error: corrected the window name used to detect the
+            on-screen keyboard from "keyboard" to the correct Kodi window name "virtualkeyboard", across all
+            checks (boot sequence, player overlay, and the Guardian loop).
+
+            [Feature] The "connect now?" prompt (previously only shown for Trakt/TorBox) now appears
+            for all 6 supported providers — AllDebrid, Real-Debrid, Premiumize, and EasyNews are included too.
+            [Bug Fix] Added missing localization strings for AllDebrid, Real-Debrid, Premiumize, and EasyNews
+            status messages — they were referenced by the code but missing from strings.po, causing blank text
+            during boot for those providers.
+
             v1.0.1 - Added support for service providers — Trakt, TorBox, AllDebrid, Real-Debrid, Premiumize and EasyNews.
             On first install, select which providers to enable — checked on every boot.
             If not connected, a prompt appears to connect directly without digging through POV settings.
