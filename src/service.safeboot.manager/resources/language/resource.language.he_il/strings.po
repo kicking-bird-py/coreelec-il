@@ -11,105 +11,107 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+
+
 msgctxt "#30001"
 msgid ""
-msgstr " מנקה קבצים זמניים..."
+msgstr "מנקה קבצים זמניים..."
 
 msgctxt "#30002"
 msgid ""
-msgstr " מאתחל מערכת"
+msgstr "מאתחל מערכת"
 
 msgctxt "#30003"
-msgid ""
-msgstr " מאתחל שירותים"
+msgid "" 
+msgstr "מאתחל שירותים"
 
 msgctxt "#30004"
-msgid ""
-msgstr " מאתחל ממשק IPTV"
+msgid  ""
+msgstr "מאתחל ממשק IPTV"
 
 msgctxt "#30005"
 msgid ""
-msgstr " טוען ערוצי IPTV"
+msgstr "טוען ערוצי IPTV"
 
 msgctxt "#30006"
 msgid ""
-msgstr " מערכת IPTV מוכנה"
+msgstr "מערכת IPTV מוכנה"
 
 msgctxt "#30007"
 msgid ""
-msgstr " סורק תוספים"
+msgstr "סורק תוספים"
 
 msgctxt "#30008"
 msgid ""
-msgstr " מערכת IPTV לא פעילה"
+msgstr "מערכת IPTV אינה פעילה"
 
 msgctxt "#30009"
 msgid ""
-msgstr " בודק יציבות מערכת"
+msgstr "בודק יציבות מערכת"
 
 msgctxt "#30010"
 msgid ""
-msgstr " בודק חיבור ל-Trakt..."
+msgstr "בודק חיבור Trakt..."
 
 msgctxt "#30011"
 msgid ""
-msgstr " שירות Trakt לא מחובר"
+msgstr "שירות Trakt לא מחובר"
 
 msgctxt "#30012"
 msgid ""
-msgstr " בודק חיבור ל-TorBox..."
+msgstr "בודק חיבור TorBox..."
 
 msgctxt "#30013"
 msgid ""
-msgstr " TorBox לא מחובר"
+msgstr "TorBox לא מחובר"
 
 msgctxt "#30014"
 msgid ""
-msgstr " מסיים סריקות"
+msgstr "מסיים סריקות"
 
 msgctxt "#30015"
 msgid ""
-msgstr " מסיים טעינה"
+msgstr "מסיים טעינה"
 
 msgctxt "#30016"
 msgid ""
-msgstr "✔ מחובר ל-Trakt"
+msgstr " ✔ מחובר ל-Trakt"
 
 msgctxt "#30017"
 msgid ""
-msgstr "✔ מחובר ל-TorBox"
+msgstr " ✔ מחובר ל-TorBox"
 
 msgctxt "#30018"
 msgid ""
-msgstr "Kodi מוכן ✔"
+msgstr "✔ קודי מוכן"
 
 msgctxt "#30019"
 msgid ""
-msgstr " המערכת מעבדת נתונים, נא להמתין"
+msgstr "המערכת בתהליך עיבוד, נא להמתין"
 
 msgctxt "#30020"
 msgid ""
-msgstr " סוגר נגן ומייצב מערכת..."
+msgstr "סוגר נגן ומייצב מערכת..."
 
 msgctxt "#30021"
 msgid ""
-msgstr " מפעיל נגן, נא להמתין..."
+msgstr "מפעיל נגן, נא להמתין..."
 
 msgctxt "#30022"
 msgid ""
-msgstr "Trakt לא מחובר. האם לפתוח חלון התחברות?"
+msgstr "Trakt לא מחובר. לפתוח חלון התחברות?"
 
 msgctxt "#30023"
 msgid ""
-msgstr "TorBox לא מחובר. האם לפתוח חלון התחברות?"
+msgstr "TorBox לא מחובר. לפתוח חלון התחברות?"
 
 msgctxt "#30024"
 msgid ""
-msgstr " בודק חיבור ל-AllDebrid..."
+msgstr "בודק חיבור AllDebrid..."
 
 msgctxt "#30025"
 msgid ""
-msgstr " שירות AllDebrid לא מחובר"
+msgstr "AllDebrid לא מחובר"
 
 msgctxt "#30026"
 msgid ""
@@ -117,53 +119,53 @@ msgstr "✔ מחובר ל-AllDebrid"
 
 msgctxt "#30028"
 msgid ""
-msgstr " בודק חיבור ל-Real-Debrid..."
+msgstr "בודק חיבור Real-Debrid..."
 
 msgctxt "#30029"
 msgid ""
-msgstr " שירות Real-Debrid לא מחובר"
+msgstr "Real-Debrid לא מחובר"
 
 msgctxt "#30030"
 msgid ""
-msgstr "✔ מחובר ל-Real-Debrid"
+msgstr " ✔ מחובר ל-Real-Debrid"
 
 msgctxt "#30032"
 msgid ""
-msgstr " בודק חיבור ל-Premiumize..."
+msgstr "בודק חיבור Premiumize..."
 
 msgctxt "#30033"
 msgid ""
-msgstr " שירות Premiumize לא מחובר"
+msgstr "Premiumize לא מחובר"
 
 msgctxt "#30034"
 msgid ""
-msgstr "✔ מחובר ל-Premiumize"
+msgstr " ✔ מחובר ל-Premiumize"
 
 msgctxt "#30036"
 msgid ""
-msgstr " בודק חיבור ל-EasyNews..."
+msgstr "בודק חיבור EasyNews..."
 
 msgctxt "#30037"
 msgid ""
-msgstr " שירות EasyNews לא מחובר"
+msgstr "EasyNews לא מחובר"
 
 msgctxt "#30038"
 msgid ""
-msgstr "✔ מחובר ל-EasyNews"
+msgstr " ✔ מחובר ל-EasyNews"
 
 msgctxt "#30040"
 msgid ""
-msgstr "%s לא מחובר. האם לפתוח חלון התחברות?"
+msgstr "%s לא מחובר. לפתוח חלון התחברות?"
 
-# ── הגדרות משתמש ──────────────────────────────
+# ── User Settings ──────────────────────────────
 
 msgctxt "#32000"
 msgid ""
-msgstr "Safe Boot Manager"
+msgstr "מנהל אתחול בטוח (Safe Boot)"
 
 msgctxt "#32001"
 msgid ""
-msgstr "אתחול"
+msgstr "עלייה (Startup)"
 
 msgctxt "#32005"
 msgid ""
@@ -175,20 +177,44 @@ msgstr "הצג מסך המתנה בנגן"
 
 msgctxt "#32008"
 msgid ""
-msgstr "הפעל את Safe Boot Manager"
-
-msgctxt "#32011"
-msgid ""
-msgstr "לחיצה כפולה על חזור לעצירת הנגן"
+msgstr "הפעל את מנהל האתחול הבטוח"
 
 msgctxt "#32012"
 msgid ""
-msgstr "לחץ 3 פעמים ברצף על מקש חזור"
+msgstr "לחץ על 'חזור' 3 פעמים ברצף"
 
 msgctxt "#32013"
 msgid ""
-msgstr "יציאה מנגן"
+msgstr "צא מהנגן"
 
 msgctxt "#32014"
 msgid ""
-msgstr "הצג מסך המתנה בעומס מערכת"
+msgstr "הצג מסך המתנה בזמן טעינת המערכת"
+
+msgctxt "#32020"
+msgid ""
+msgstr "ספקים"
+
+msgctxt "#32021"
+msgid ""
+msgstr "בדוק חיבור Trakt בעת הפעלת קודי"
+
+msgctxt "#32022"
+msgid ""
+msgstr "בדוק חיבור TorBox בעת הפעלת קודי"
+
+msgctxt "#32023"
+msgid ""
+msgstr "בדוק חיבור AllDebrid בעת הפעלת קודי"
+
+msgctxt "#32024"
+msgid ""
+msgstr "בדוק חיבור Real-Debrid בעת הפעלת קודי"
+
+msgctxt "#32025"
+msgid ""
+msgstr "בדוק חיבור Premiumize בעת הפעלת קודי"
+
+msgctxt "#32026"
+msgid ""
+msgstr "בדוק חיבור EasyNews בעת הפעלת קודי"
