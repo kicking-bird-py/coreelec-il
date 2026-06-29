@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<?xml version="1.0" encoding="UTF-8"?>
+
 <addon id="repository.coreelec-il" name="coreELEC-IL Repository" version="1.0.1"
     provider-name="kicking-bird-py | CoreELEC-IL">
     <extension point="xbmc.addon.repository" name="coreELEC-IL Repository">
@@ -41,7 +41,7 @@
     </extension>
     
 </addon>
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
 <addon id="plugin.program.autocompletion"
        name="AutoCompletion [CoreELEC-IL Edition]" 
        version="3.0.1"
