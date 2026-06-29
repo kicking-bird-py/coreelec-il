@@ -25,7 +25,7 @@
                     <default>true</default>
                     <control type="toggle"/>
                 </setting>
-                <setting id="double_back_stop" type="boolean" label="32011">
+                <setting id="double_back_stop" type="boolean" label="32012">
                     <level>0</level>
                     <default>true</default>
                     <control type="toggle"/>

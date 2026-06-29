@@ -5,6 +5,18 @@ License:  GPL-3.0-only
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+### [v1.0.5] - 2026-06-29
+
+#### תיקוני באגים ועדכון הגדרות
+
+* **תיקוני באגים בקובץ התרגום:** סודרו באגים נוספים בקובץ strings.po.
+
+* **הסרת מחרוזות תרגום ישנות:** הוסרו מספרי מחרוזות תרגום ישנים ולא רלוונטיים מהקובץ.
+
+* **תיקון קובץ הגדרות:** תוקנה תקלה בקובץ settings.xml.
+
+---
+
 ### [v1.0.4] - 2026-06-29
 
 #### תיקוני באגים בתרגום 
@@ -102,6 +114,18 @@ License:  GPL-3.0-only
 
 ---
 
+
+## [v1.0.5] - 2026-06-29
+
+#### Bug Fixes & Settings Update
+
+* **Translation File Bug Fixes:** Fixed additional bugs in strings.po.
+
+* **Removed Old Translation Strings:** Removed outdated and unused localization string entries from the file.
+
+* **Settings File Fix:** Fixed an issue in settings.xml.
+
+---
 
 ## [v1.0.4] - 2026-06-29
    

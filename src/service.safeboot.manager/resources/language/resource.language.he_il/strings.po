@@ -33,9 +33,6 @@ msgctxt "#30005"
 msgid ""
 msgstr "טוען ערוצי IPTV"
 
-msgctxt "#30006"
-msgid ""
-msgstr "מערכת IPTV מוכנה"
 
 msgctxt "#30007"
 msgid ""
@@ -69,9 +66,6 @@ msgctxt "#30014"
 msgid ""
 msgstr "מסיים סריקות"
 
-msgctxt "#30015"
-msgid ""
-msgstr "מסיים טעינה"
 
 msgctxt "#30016"
 msgid ""
@@ -159,11 +153,6 @@ msgstr "%s לא מחובר. לפתוח חלון התחברות?"
 
 # ── User Settings ──────────────────────────────
 
-msgctxt "#32000"
-msgid ""
-msgstr "Safe Boot Manager"
-
-Safe Boot Manager
 
 msgctxt "#32001"
 msgid ""
@@ -185,9 +174,6 @@ msgctxt "#32012"
 msgid ""
 msgstr "לחץ על 'חזור' 3 פעמים ברצף"
 
-msgctxt "#32013"
-msgid ""
-msgstr "צא מהנגן"
 
 msgctxt "#32014"
 msgid ""

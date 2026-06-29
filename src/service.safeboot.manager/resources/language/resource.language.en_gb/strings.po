@@ -34,9 +34,6 @@ msgctxt "#30005"
 msgid "Loading IPTV channels"
 msgstr ""
 
-msgctxt "#30006"
-msgid "IPTV system ready"
-msgstr  ""
 
 msgctxt "#30007"
 msgid "Scanning addons"
@@ -70,9 +67,6 @@ msgctxt "#30014"
 msgid "Finishing scans"
 msgstr ""
 
-msgctxt "#30015"
-msgid "Finishing load"
-msgstr  ""
 
 msgctxt "#30016"
 msgid " ✔Connected to Trakt"
@@ -160,9 +154,6 @@ msgstr ""
 
 # ── User Settings ──────────────────────────────
 
-msgctxt "#32000"
-msgid "Safe Boot Manager"
-msgstr  ""
 
 msgctxt "#32001"
 msgid "Startup & System"
@@ -186,9 +177,6 @@ msgctxt "#32012"
 msgid "Press Back 3 times in a row"
 msgstr  ""
 
-msgctxt "#32013"
-msgid "Exit player"
-msgstr  ""
 
 msgctxt "#32014"
 msgid "Show waiting screen during system load"
@@ -215,291 +203,10 @@ msgid "Check Real-Debrid connection on Kodi startup"
 msgstr ""
 
 msgctxt "#32025"
-msgid  Check Premiumize connection on Kodi startup
+msgid "Check Premiumize connection on Kodi startup"
 msgstr ""
 
 msgctxt "#32026"
 msgid "Check EasyNews connection on Kodi startup"
 msgstr  ""
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-msgctxt "#30001"
-msgid "Clearing temporary files..."
-msgstr "מנקה קבצים זמניים..."
-
-msgctxt "#30002"
-msgid "Initializing system"
-msgstr "מאתחל מערכת"
-
-msgctxt "#30003"
-msgid "Initializing services"
-msgstr "מאתחל שירותים"
-
-msgctxt "#30004"
-msgid "Initializing IPTV interface"
-msgstr "מאתחל ממשק IPTV"
-
-msgctxt "#30005"
-msgid "Loading IPTV channels"
-msgstr "טוען ערוצי IPTV"
-
-msgctxt "#30006"
-msgid "IPTV system ready"
-msgstr "מערכת IPTV מוכנה"
-
-msgctxt "#30007"
-msgid "Scanning addons"
-msgstr "סורק תוספים"
-
-msgctxt "#30008"
-msgid "IPTV system not active"
-msgstr "מערכת IPTV לא פעילה"
-
-msgctxt "#30009"
-msgid "Checking system stability"
-msgstr "בודק יציבות מערכת"
-
-msgctxt "#30010"
-msgid "Checking Trakt connection..."
-msgstr "בודק חיבור Trakt..."
-
-msgctxt "#30011"
-msgid "Trakt service not connected"
-msgstr "Trakt לא מחובר"
-
-msgctxt "#30012"
-msgid "Checking TorBox connection..."
-msgstr "בודק חיבור TorBox..."
-
-msgctxt "#30013"
-msgid "TorBox not connected"
-msgstr "TorBox לא מחובר"
-
-msgctxt "#30014"
-msgid "Finishing scans"
-msgstr "מסיים סריקות"
-
-msgctxt "#30015"
-msgid "Finishing load"
-msgstr "מסיים טעינה"
-
-msgctxt "#30016"
-msgid "Connected to Trakt"
-msgstr "✔ מחובר ל-Trakt"
-
-msgctxt "#30017"
-msgid "Connected to TorBox"
-msgstr "✔ מחובר ל-TorBox"
-
-msgctxt "#30018"
-msgid "Kodi is ready"
-msgstr "קודי מוכן ✔"
-
-msgctxt "#30019"
-msgid "System is processing, please wait"
-msgstr "המערכת עסוקה, נא להמתין"
-
-msgctxt "#30020"
-msgid "Closing player and stabilizing system..."
-msgstr "סוגר נגן ומייצב מערכת..."
-
-msgctxt "#30021"
-msgid "Starting player, please wait..."
-msgstr "מפעיל נגן, נא להמתין..."
-
-msgctxt "#30022"
-msgid "Trakt is not connected. Open the login window?"
-msgstr "Trakt לא מחובר. לפתוח חלון התחברות?"
-
-msgctxt "#30023"
-msgid "TorBox is not connected. Open the login window?"
-msgstr "TorBox לא מחובר. לפתוח חלון התחברות?"
-
-msgctxt "#30024"
-msgid "Checking AllDebrid connection..."
-msgstr "בודק חיבור AllDebrid..."
-
-msgctxt "#30025"
-msgid "AllDebrid service not connected"
-msgstr "AllDebrid לא מחובר"
-
-msgctxt "#30026"
-msgid "Connected to AllDebrid"
-msgstr "✔ מחובר ל-AllDebrid"
-
-msgctxt "#30028"
-msgid "Checking Real-Debrid connection..."
-msgstr "בודק חיבור Real-Debrid..."
-
-msgctxt "#30029"
-msgid "Real-Debrid service not connected"
-msgstr "Real-Debrid לא מחובר"
-
-msgctxt "#30030"
-msgid "Connected to Real-Debrid"
-msgstr "✔ מחובר ל-Real-Debrid"
-
-msgctxt "#30032"
-msgid "Checking Premiumize connection..."
-msgstr "בודק חיבור Premiumize..."
-
-msgctxt "#30033"
-msgid "Premiumize service not connected"
-msgstr "Premiumize לא מחובר"
-
-msgctxt "#30034"
-msgid "Connected to Premiumize"
-msgstr "✔ מחובר ל-Premiumize"
-
-msgctxt "#30036"
-msgid "Checking EasyNews connection..."
-msgstr "בודק חיבור EasyNews..."
-
-msgctxt "#30037"
-msgid "EasyNews service not connected"
-msgstr "EasyNews לא מחובר"
-
-msgctxt "#30038"
-msgid "Connected to EasyNews"
-msgstr "✔ מחובר ל-EasyNews"
-
-msgctxt "#30040"
-msgid "%s is not connected. Open the login window?"
-msgstr "%s לא מחובר. לפתוח חלון התחברות?"
-
-# ── User Settings ──────────────────────────────
-
-msgctxt "#32000"
-msgid "Safe Boot Manager"
-msgstr "Safe Boot Manager"
-
-msgctxt "#32001"
-msgid "Startup"
-msgstr "אתחול"
-
-msgctxt "#32005"
-msgid "Player"
-msgstr "נגן"
-
-msgctxt "#32006"
-msgid "Show waiting screen in player"
-msgstr "הצג מסך המתנה בנגן"
-
-msgctxt "#32008"
-msgid "Enable Safe Boot Manager"
-msgstr "הפעל Safe Boot Manager"
-
-
-
-msgctxt "#32012"
-msgid "Press Back 3 times in a row"
-msgstr "לחץ חזרה 3 פעמים ברצף"
-
-msgctxt "#32013"
-msgid "Exit player"
-msgstr "יציאה מהנגן"
-
-msgctxt "#32014"
-msgid "Show waiting screen during system load"
-msgstr "הצג מסך המתנה בטעינת המערכת"
-
-
-msgctxt "#32020"
-msgid "Providers"
-msgstr "Providers"
-
-msgctxt "#32021"
-msgid "Check Trakt"
-msgstr "Check Trakt"
-
-msgctxt "#32022"
-msgid "Check TorBox"
-msgstr "Check TorBox"
-
-msgctxt "#32023"
-msgid "Check AllDebrid"
-msgstr "Check AllDebrid"
-
-msgctxt "#32024"
-msgid "Check Real-Debrid"
-msgstr "Check Real-Debrid"
-
-msgctxt "#32025"
-msgid "Check Premiumize"
-msgstr "Check Premiumize"
-
-msgctxt "#32026"
-msgid "Check EasyNews"
-msgstr "Check EasyNews"
