@@ -62,7 +62,7 @@ Browse to [kicking-bird-py.github.io/ce-il](https://kicking-bird-py.github.io/ce
 
 **Option C — Via Git:**
 ```bash
-git clone https://github.com/kicking-bird-py/ce-il.git
+git clone https://github.com/kicking-bird-py/coreelec-il.git
 ```
 
 ---
