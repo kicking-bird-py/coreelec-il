@@ -62,7 +62,7 @@
 
 **אפשרות ג׳ — דרך Git:**
 ```bash
-git clone https://github.com/kicking-bird-py/ce-il.git
+git clone https://github.com/kicking-bird-py/coreelec-il.git
 ```
 
 ---
