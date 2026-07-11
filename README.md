@@ -77,11 +77,11 @@
 
 💡 למה אין כאן <img src="https://img.shields.io/badge/Build-17B2E7?style=for-the-badge&logo=kodi&logoColor=white" alt="Build" height="28"/> ?
 > כי Build-ים נוטים להיות כבדים, עמוסים, ונשברים אחרי כל עדכון. אני מעדיף לתת לכם כלים יציבים ומודולריים — ואתם תבנו מהם את החוויה שלכם, על בסיס נקי ומהיר.
-
+---
 <div align="center">
 
 [⬆️ חזרה לניווט המהיר](#-ניווט-מהיר)
----
+
 </div>
 
 ---
