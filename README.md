@@ -126,8 +126,6 @@
 
 ---
 
-<br>
-
 ---
 
 <div align="center">
