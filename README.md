@@ -113,6 +113,12 @@
 <td align="left"><code>git clone https://github.com/kicking-bird-py/coreelec-il.git</code></td>
 </tr>
 </table>
+<div align="center">
+
+```bash
+git clone https://github.com/kicking-bird-py/coreelec-il.git
+```
+</div>
 <br>
 
 ---
