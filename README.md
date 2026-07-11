@@ -78,7 +78,7 @@
 💡 למה אין כאן <img src="https://img.shields.io/badge/Build-17B2E7?style=for-the-badge&logo=kodi&logoColor=white" alt="Build" height="28"/> ?
 > כי Build-ים נוטים להיות כבדים, עמוסים, ונשברים אחרי כל עדכון. אני מעדיף לתת לכם כלים יציבים ומודולריים — ואתם תבנו מהם את החוויה שלכם, על בסיס נקי ומהיר.
 
-<div align="right">
+<div align="center">
 
 [⬆️ חזרה לניווט המהיר](#-ניווט-מהיר)
 
@@ -114,10 +114,15 @@
 </tr>
 </table>
 <br>
+
 <div align="center">
+
+---
 [⬆️ חזרה לניווט המהיר](#-ניווט-מהיר)
 
 </div>
+
+---
 
 <br>
 
@@ -148,7 +153,7 @@
 </div>
 
 ---
-<div align="left">
+<div align="center">
 
 ### 🔍 AutoCompletion `[CoreELEC-IL Edition]`
 
@@ -215,7 +220,7 @@
 ---
 
 <br><br>
-<div align="center">
+<div align="left">
 
 `v1.0.5` 🟢 &nbsp;•&nbsp; [📦 הורדת ZIP](https://github.com/kicking-bird-py/coreelec-il/tree/main/zips/service.safeboot.manager) &nbsp;•&nbsp; [📂 קוד מקור](https://github.com/kicking-bird-py/coreelec-il/tree/main/src/service.safeboot.manager)
 
