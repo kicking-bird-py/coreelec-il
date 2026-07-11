@@ -222,7 +222,7 @@
 ---
 
 <br><br>
-<div align="left">
+<div align="center">
 
 `v1.0.5` 🟢 &nbsp;•&nbsp; [📦 הורדת ZIP](https://github.com/kicking-bird-py/coreelec-il/tree/main/zips/service.safeboot.manager) &nbsp;•&nbsp; [📂 קוד מקור](https://github.com/kicking-bird-py/coreelec-il/tree/main/src/service.safeboot.manager)
 
@@ -240,7 +240,7 @@
 </div>
 
 ---
-<div align="center">
+<div align="left">
 
 ### 🛡️ Safe Boot Manager `[CoreELEC-IL Exclusive]`
 
