@@ -148,7 +148,7 @@
 </div>
 
 ---
-<div align="center">
+<div align="left">
 
 ### 🔍 AutoCompletion `[CoreELEC-IL Edition]`
 
