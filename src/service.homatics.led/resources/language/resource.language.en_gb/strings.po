@@ -1,0 +1,94 @@
+# Homatics LED Service language file - English
+# Author: kicking-bird-py | CoreELEC-IL
+# Date: 04.08.2026
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en\n"
+
+msgctxt "#32050"
+msgid "LED Status"
+msgstr ""
+
+msgctxt "#32051"
+msgid "Enable LED Status Ring"
+msgstr ""
+
+msgctxt "#32052"
+msgid "Idle Effect"
+msgstr ""
+
+msgctxt "#32053"
+msgid "Rotating Rainbow"
+msgstr ""
+
+msgctxt "#32054"
+msgid "Solid Color"
+msgstr ""
+
+msgctxt "#32055"
+msgid "Idle Color"
+msgstr ""
+
+msgctxt "#32056"
+msgid "Playback Color"
+msgstr ""
+
+msgctxt "#32057"
+msgid "Color Cycle"
+msgstr ""
+
+#---- Solid Colors ---
+
+msgctxt "#32060"
+msgid "Red"
+msgstr ""
+
+msgctxt "#32061"
+msgid "Orange"
+msgstr ""
+
+msgctxt "#32062"
+msgid "Yellow"
+msgstr ""
+
+msgctxt "#32063"
+msgid "Green"
+msgstr ""
+
+msgctxt "#32064"
+msgid "Turquoise"
+msgstr ""
+
+msgctxt "#32065"
+msgid "Blue"
+msgstr ""
+
+msgctxt "#32066"
+msgid "Purple"
+msgstr ""
+
+msgctxt "#32067"
+msgid "Pink"
+msgstr ""
+
+msgctxt "#32068"
+msgid "White"
+msgstr ""
+#_____________________
+
+msgctxt "#32069"
+msgid "Off"
+msgstr ""
+
+msgctxt "#32070"
+msgid "Playback Effect"
+msgstr ""
+
+msgctxt "#32071"
+msgid "Busy Effect"
+msgstr ""
+
+msgctxt "#32072"
+msgid "Busy Color"
+msgstr ""

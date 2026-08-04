@@ -1,0 +1,94 @@
+# Homatics LED Service language file - Hebrew
+# Author: kicking-bird-py | CoreELEC-IL
+# Date: 04.08.2026
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: he\n"
+
+msgctxt "#32050"
+msgid ""
+msgstr "חיווי LED"
+
+msgctxt "#32051"
+msgid ""
+msgstr "הפעל חיווי LED"
+
+msgctxt "#32052"
+msgid ""
+msgstr "אפקט במצב המתנה"
+
+msgctxt "#32053"
+msgid ""
+msgstr "קשת מסתובבת"
+
+msgctxt "#32054"
+msgid ""
+msgstr "צבע אחיד"
+
+msgctxt "#32055"
+msgid ""
+msgstr "צבע במצב המתנה"
+
+msgctxt "#32056"
+msgid ""
+msgstr "צבע בנגינה"
+
+msgctxt "#32057"
+msgid ""
+msgstr "מחזור צבעים"
+
+#---- צבעים ---
+
+msgctxt "#32060"
+msgid ""
+msgstr "אדום"
+
+msgctxt "#32061"
+msgid ""
+msgstr "כתום"
+
+msgctxt "#32062"
+msgid ""
+msgstr "צהוב"
+
+msgctxt "#32063"
+msgid ""
+msgstr "ירוק"
+
+msgctxt "#32064"
+msgid ""
+msgstr "טורקיז"
+
+msgctxt "#32065"
+msgid ""
+msgstr "כחול"
+
+msgctxt "#32066"
+msgid ""
+msgstr "סגול"
+
+msgctxt "#32067"
+msgid ""
+msgstr "ורוד"
+
+msgctxt "#32068"
+msgid ""
+msgstr "לבן"
+#_____________________
+
+msgctxt "#32069"
+msgid ""
+msgstr "כבוי"
+
+msgctxt "#32070"
+msgid ""
+msgstr "אפקט בנגינה"
+
+msgctxt "#32071"
+msgid ""
+msgstr "אפקט במצב עסוק"
+
+msgctxt "#32072"
+msgid ""
+msgstr "צבע במצב עסוק"

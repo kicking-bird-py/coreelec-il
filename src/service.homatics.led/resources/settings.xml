@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings version="1">
+
+    <section id="service.homatics.led">
+
+        <category id="led" label="32050">
+            <group id="1">
+                <setting id="led_status_enabled" type="boolean" label="32051">
+                    <level>0</level>
+                    <default>true</default>
+                    <control type="toggle"/>
+                </setting>
+                <!-- [CoreELEC-IL] Internal bookkeeping only — not shown to
+                     the user. Lets led_status_mixin.py auto-disable
+                     led_status_enabled exactly once on devices without the
+                     LED chip (e.g. PCs, other streamer boxes), so the
+                     toggle above doesn't show "on" on hardware where the
+                     feature can never actually do anything. -->
+                <setting id="led_hw_autodetect_done" type="boolean" label="32051">
+                    <level>0</level>
+                    <default>false</default>
+                    <visible>false</visible>
+                </setting>
+                <setting id="led_idle_mode" type="integer" label="32052">
+                    <level>0</level>
+                    <default>0</default>
+                    <constraints>
+                        <options>
+                            <option label="32053">0</option>
+                            <option label="32054">1</option>
+                            <option label="32057">2</option>
+                        </options>
+                    </constraints>
+                    <control type="list" format="integer"/>
+                    <dependencies>
+                        <dependency type="enable" setting="led_status_enabled" operator="is">true</dependency>
+                    </dependencies>
+                </setting>
+                <setting id="led_idle_color" type="integer" label="32055">
+                    <level>0</level>
+                    <default>9</default>
+                    <constraints>
+                        <options>
+                            <option label="32060">0</option>
+                            <option label="32061">1</option>
+                            <option label="32062">2</option>
+                            <option label="32063">3</option>
+                            <option label="32064">4</option>
+                            <option label="32065">5</option>
+                            <option label="32066">6</option>
+                            <option label="32067">7</option>
+                            <option label="32068">8</option>
+                            <option label="32069">9</option>
+                        </options>
+                    </constraints>
+                    <control type="list" format="integer"/>
+                    <dependencies>
+                        <dependency type="enable" setting="led_status_enabled" operator="is">true</dependency>
+                        <dependency type="enable" setting="led_idle_mode" operator="is">1</dependency>
+                    </dependencies>
+                </setting>
+                <setting id="led_play_mode" type="integer" label="32070">
+                    <level>0</level>
+                    <default>1</default>
+                    <constraints>
+                        <options>
+                            <option label="32053">0</option>
+                            <option label="32054">1</option>
+                            <option label="32057">2</option>
+                        </options>
+                    </constraints>
+                    <control type="list" format="integer"/>
+                    <dependencies>
+                        <dependency type="enable" setting="led_status_enabled" operator="is">true</dependency>
+                    </dependencies>
+                </setting>
+                <setting id="led_play_color" type="integer" label="32056">
+                    <level>0</level>
+                    <default>6</default>
+                    <constraints>
+                        <options>
+                            <option label="32060">0</option>
+                            <option label="32061">1</option>
+                            <option label="32062">2</option>
+                            <option label="32063">3</option>
+                            <option label="32064">4</option>
+                            <option label="32065">5</option>
+                            <option label="32066">6</option>
+                            <option label="32067">7</option>
+                            <option label="32068">8</option>
+                            <option label="32069">9</option>
+                        </options>
+                    </constraints>
+                    <control type="list" format="integer"/>
+                    <dependencies>
+                        <dependency type="enable" setting="led_status_enabled" operator="is">true</dependency>
+                        <dependency type="enable" setting="led_play_mode" operator="is">1</dependency>
+                    </dependencies>
+                </setting>
+                <setting id="led_busy_mode" type="integer" label="32071">
+                    <level>0</level>
+                    <default>2</default>
+                    <constraints>
+                        <options>
+                            <option label="32053">0</option>
+                            <option label="32054">1</option>
+                            <option label="32057">2</option>
+                        </options>
+                    </constraints>
+                    <control type="list" format="integer"/>
+                    <dependencies>
+                        <dependency type="enable" setting="led_status_enabled" operator="is">true</dependency>
+                    </dependencies>
+                </setting>
+                <setting id="led_busy_color" type="integer" label="32072">
+                    <level>0</level>
+                    <default>0</default>
+                    <constraints>
+                        <options>
+                            <option label="32060">0</option>
+                            <option label="32061">1</option>
+                            <option label="32062">2</option>
+                            <option label="32063">3</option>
+                            <option label="32064">4</option>
+                            <option label="32065">5</option>
+                            <option label="32066">6</option>
+                            <option label="32067">7</option>
+                            <option label="32068">8</option>
+                            <option label="32069">9</option>
+                        </options>
+                    </constraints>
+                    <control type="list" format="integer"/>
+                    <dependencies>
+                        <dependency type="enable" setting="led_status_enabled" operator="is">true</dependency>
+                        <dependency type="enable" setting="led_busy_mode" operator="is">1</dependency>
+                    </dependencies>
+                </setting>
+            </group>
+        </category>
+
+    </section>
+
+</settings>

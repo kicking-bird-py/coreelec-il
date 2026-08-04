@@ -1,0 +1,18 @@
+
+Addon:    homatics led
+Author:   kicking-bird-py | CoreELEC-IL
+Source:   https://github.com/kicking-bird-py/coreelec-il
+License:  GPL-3.0-only
+
+## [1.0.0] - 2026-08-04
+- שחרור ראשוני עבור CoreELEC-IL / Homatics Box R 4K Plus.
+- הוספת תמיכה בטבעת בקרת נורית החיווי (מצבי המתנה, ניגון ועומס).
+- הוספת אנימציות רב-מצביות: קשת בענן מסתובבת, צבע אחיד, ומחזור דעיכת צבעים.
+- הוספת זיהוי אוטומטי חכם (Safe-boot) עבור נתיב שבב ה-LED במערכת.
+
+
+## [1.0.0] - 2026-08-04
+- Initial release for CoreELEC-IL / Homatics Box R 4K Plus.
+- Added support for status LED control ring (IDLE, PLAYBACK, BUSY states).
+- Added multi-mode animations: rotating rainbow, solid color, and color-cycle fade.
+- Added smart safe-boot auto-detection for the LED sysfs chip path.
