@@ -41,7 +41,32 @@
         </assets>
     </extension>
 </addon>
-
+    
+<addon id="service.homatics.led" name="Homatics LED Status" version="1.0.0" provider-name="kicking-bird-py | CoreELEC-IL">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.service" library="resources/lib/service.py" start="startup"/>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_gb">LED Status Ring for Homatics Box R 4K Plus</summary>
+        <summary lang="he_il">טבעת נורות LED ל- Homatics Box R 4K Plus</summary>
+        <description lang="en_gb">Manages and animates the Homatics Box R 4K Plus LED status ring according to the player state (idle, playback, or busy). Supports a rotating rainbow, solid colors, and additional lighting effects. Operates exclusively on CoreELEC.</description>
+        <description lang="he_il">מנהלת ומנפישה את טבעת חיווי ה-LED של ה-Homatics Box R 4K Plus בהתאם למצב הנגן (המתנה, ניגון או פעילות). תומכת בקשת צבעים, צבע אחיד ואפקטים נוספים. פועלת תחת CoreELEC בלבד.</description>
+        <news>[B]v1.0.0[/B]
+        - Initial release
+        - LED ring reflects idle, playback, and busy states (rainbow, solid color, or color-cycle fade)
+        - Fully configurable via settings, applies live with no restart needed
+        - CoreELEC only (requires the Homatics Box R 4K Plus LED chip)</news>
+        <platform>linux</platform>
+        <license>GPL-3.0-only</license>
+        <source>https://github.com/coreelec-il/service.homatics.led</source>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+    
 <addon id="plugin.program.autocompletion"
        name="AutoCompletion [CoreELEC-IL Edition]" 
        version="3.0.1"
@@ -97,6 +122,7 @@
         <source>https://github.com/kicking-bird-py/open-source/plugin.program.autocompletion</source>
     </extension>
 </addon>  
+    
 <addon id="service.safeboot.manager"
        name="Safe Boot Manager"
        version="1.0.5"
