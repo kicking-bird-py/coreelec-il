@@ -36,8 +36,8 @@
 
         <platform>all</platform>
         <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
+            <icon>https://raw.githubusercontent.com/kicking-bird-py/repository.coreelec.il/main/zips/repository.coreelec.il/icons/repository.coreelec.il/icon.png</icon>
+            <fanart>https://raw.githubusercontent.com/kicking-bird-py/repository.coreelec.il/main/zips/repository.coreelec.il/icons/repository.coreelec.il/fanart.jpg</fanart>
         </assets>
     </extension>
 </addon>
@@ -61,8 +61,8 @@
         <license>GPL-3.0-only</license>
         <source>https://github.com/coreelec-il/service.homatics.led</source>
         <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
+            <icon>https://raw.githubusercontent.com/kicking-bird-py/repository.coreelec.il/main/zips/repository.coreelec.il/icons/service.homatics.led/icon.png</icon>
+            <fanart>https://raw.githubusercontent.com/kicking-bird-py/repository.coreelec.il/main/zips/repository.coreelec.il/icons/service.homatics.led/fanart.jpg</fanart>
         </assets>
     </extension>
 </addon>
